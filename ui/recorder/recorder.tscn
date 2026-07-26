@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://diiyphvk3p0fo"]
+
+[ext_resource type="Script" uid="uid://csgn0fqsxqicx" path="res://ui/recorder/recorder.gd" id="1_3iynx"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_3iynx"]
+
+[sub_resource type="AudioStream" id="AudioStream_3e1he"]
+
+[node name="Recorder" type="Node2D" unique_id=970981238]
+script = ExtResource("1_3iynx")
+
+[node name="TimerLimitRecord" type="Timer" parent="." unique_id=443724990]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1090999036]
+offset_left = 6.0
+offset_top = 93.0
+offset_right = 74.0
+offset_bottom = 120.0
+
+[node name="RecordButton" type="Button" parent="." unique_id=158980585]
+offset_left = 50.0
+offset_top = 1.0
+offset_right = 194.0
+offset_bottom = 40.0
+text = "Record"
+
+[node name="PlayButton" type="Button" parent="." unique_id=1279277988]
+offset_left = 50.0
+offset_top = 46.0
+offset_right = 194.0
+offset_bottom = 85.0
+text = "Play"
+
+[node name="RecordCountdown" type="Label" parent="." unique_id=1885830848]
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 39.0
+offset_bottom = 28.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=439070805]
+stream = SubResource("AudioStreamMicrophone_3iynx")
+autoplay = true
+bus = &"RecordingBus"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1329990075]
+stream = SubResource("AudioStream_3e1he")
+autoplay = true
+
+[connection signal="timeout" from="TimerLimitRecord" to="." method="_on_timer_limit_record_timeout"]
+[connection signal="pressed" from="RecordButton" to="." method="_on_record_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

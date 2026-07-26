@@ -13,6 +13,7 @@ extends Node2D
 @onready var input_device: OptionButton = $InputDevice
 
 @onready var timer_record_limit: Timer = 	$TimerLimitRecord
+@onready var save_name = "test.wav"
 
 var recording: AudioStreamWAV
 #var stereo: bool = true
@@ -124,6 +125,8 @@ func start_stop_recording():
 	print("do record")
 	timer_record_limit.start(60)
 	
+	
+	
 func stop_recording():
 	if not record_effect.is_recording_active():
 		return
@@ -137,9 +140,14 @@ func stop_recording():
 	#recording.set_stereo(stereo)
 	
 	record_effect.set_recording_active(is_recording)
-
 	
+	#	user://test.wav
+	print('user://%s' % save_name)
+	#	C:/Users/russj/AppData/Roaming/Godot/app_userdata/Tell Tale Heart%s' % save_name
 
+	print(OS.get_user_data_dir() + "/" + save_name)
+	recording.save_to_wav('user://%s' % save_name)
+	
 
 
 
@@ -148,9 +156,17 @@ func _on_timer_limit_record_timeout() -> void:
 	pass # Replace with function body.
 
 
+# To load an ogg at runtime you'll need to use AudioStreamOggVorbis.load_from_file()
+func load_recording():
+	
+	# I always save after recording so this should always be here.
+	var sound = AudioStreamWAV.load_from_file('user://%s' % save_name)
+	recording = sound
+	return recording
+
 func _on_play_button_pressed() -> void:
 	stop_recording()
-	
+	load_recording()
 	if not recording:
 		return
 	
