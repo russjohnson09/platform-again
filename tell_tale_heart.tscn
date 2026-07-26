@@ -32,28 +32,7 @@ popup/item_1/id = 0
 popup/item_2/text = "Mom"
 popup/item_2/id = 2
 
-[node name="Recorder2" parent="." unique_id=281426676 instance=ExtResource("2_6o2cp")]
-position = Vector2(-517, 297)
-
-[node name="Label2" type="Label" parent="Recorder2" unique_id=1777977503]
-offset_left = 65.0
-offset_top = -42.0
-offset_right = 173.0
-offset_bottom = -19.0
-text = "Parker's voice"
-metadata/_edit_use_anchors_ = true
-
 [node name="TellTaleStory" parent="." unique_id=173053834 instance=ExtResource("3_wldyk")]
-
-[node name="Recorder3" parent="." unique_id=1293819941 instance=ExtResource("2_6o2cp")]
-position = Vector2(-287, 299)
-
-[node name="Label2" type="Label" parent="Recorder3" unique_id=699888454]
-offset_left = 65.0
-offset_top = -42.0
-offset_right = 173.0
-offset_bottom = -19.0
-text = "Mom's voice"
 
 [node name="Button" type="Button" parent="." unique_id=1892556145]
 offset_left = 990.0

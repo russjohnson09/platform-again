@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var max_record_time = 30
+@export var max_record_time = 15
 @export var save_name: String = "test.wav"
 @onready var timer_record_limit: Timer = 	$TimerLimitRecord
 @onready var progress_bar: ProgressBar = $ProgressBar
@@ -73,6 +73,13 @@ func stop_recording():
 	
 	print(OS.get_user_data_dir() + "/" + save_name)
 	recording.save_to_wav('user://%s' % save_name)
+	
+	# Set this to null to free up memory?
+	# I think yes this might help but also just having the timer record limit to 
+	# 15 seconds any longer and it should not be just in memory.
+#	https://godotengine.org/asset-library/asset/5081
+# It looks like this is a known issue.
+	recording = null
 	
 
 
