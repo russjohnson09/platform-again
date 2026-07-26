@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tell Tale Heart"
-run/main_scene="res://node_2d.tscn"
+run/main_scene="uid://bdfu8gjh3gjr8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/image="uid://c08t4gvohrdvp"
 config/icon="uid://c08t4gvohrdvp"

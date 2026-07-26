@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://lwrmfm1ah8m4"]
+
+[ext_resource type="Script" uid="uid://bevwkp77ttyan" path="res://ui/tell_tale_story/tell_tale_story.gd" id="1_opsqa"]
+
+[node name="TellTaleStory" type="Node2D" unique_id=173053834]
+script = ExtResource("1_opsqa")
+
+[node name="page" type="Label" parent="." unique_id=14275387]
+offset_left = 29.0
+offset_top = 18.0
+offset_right = 775.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 25
+text = "This is the story of the tell tale heart. asdf asdf asdf asdf as df sad fs df "
+autowrap_mode = 2
+
+[node name="Next" type="Button" parent="." unique_id=144712618]
+offset_left = 294.0
+offset_top = 386.0
+offset_right = 413.0
+offset_bottom = 417.0
+text = "Next"
+
+[node name="Previous" type="Button" parent="." unique_id=412883674]
+offset_left = 62.0
+offset_top = 386.0
+offset_right = 181.0
+offset_bottom = 417.0
+text = "Previous
+"
+
+[node name="page_count" type="Label" parent="." unique_id=258975811]
+offset_left = 209.0
+offset_top = 390.0
+offset_right = 249.0
+offset_bottom = 413.0
+text = "1"
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]

@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bdfu8gjh3gjr8"]
+
+[ext_resource type="Script" uid="uid://b23pxm0krw36b" path="res://tell_tale_heart.gd" id="1_dd8ww"]
+[ext_resource type="PackedScene" uid="uid://diiyphvk3p0fo" path="res://ui/recorder/recorder.tscn" id="2_6o2cp"]
+[ext_resource type="PackedScene" uid="uid://lwrmfm1ah8m4" path="res://ui/tell_tale_story/tell_tale_story.tscn" id="3_wldyk"]
+[ext_resource type="VideoStream" uid="uid://c36rdjfm70nng" path="res://assets/Real_Human_Heart_Turntable.ogv" id="4_txgal"]
+
+[node name="TellTaleHeart" type="Node2D" unique_id=1423836503]
+script = ExtResource("1_dd8ww")
+
+[node name="Recorder" parent="." unique_id=970981238 instance=ExtResource("2_6o2cp")]
+position = Vector2(60, 512)
+
+[node name="Label" type="Label" parent="Recorder" unique_id=1339516453]
+offset_left = -209.0
+offset_top = -57.0
+offset_right = -122.0
+offset_bottom = -34.0
+text = "Dad's voice"
+
+[node name="OptionButton" type="OptionButton" parent="Recorder" unique_id=431133808]
+offset_left = 237.0
+offset_top = 3.0
+offset_right = 309.0
+offset_bottom = 34.0
+selected = 0
+item_count = 3
+popup/item_0/text = "Parker"
+popup/item_0/id = 1
+popup/item_1/text = "Dad"
+popup/item_1/id = 0
+popup/item_2/text = "Mom"
+popup/item_2/id = 2
+
+[node name="Recorder2" parent="." unique_id=281426676 instance=ExtResource("2_6o2cp")]
+position = Vector2(-517, 297)
+
+[node name="Label2" type="Label" parent="Recorder2" unique_id=1777977503]
+offset_left = 65.0
+offset_top = -42.0
+offset_right = 173.0
+offset_bottom = -19.0
+text = "Parker's voice"
+metadata/_edit_use_anchors_ = true
+
+[node name="TellTaleStory" parent="." unique_id=173053834 instance=ExtResource("3_wldyk")]
+
+[node name="Recorder3" parent="." unique_id=1293819941 instance=ExtResource("2_6o2cp")]
+position = Vector2(-287, 299)
+
+[node name="Label2" type="Label" parent="Recorder3" unique_id=699888454]
+offset_left = 65.0
+offset_top = -42.0
+offset_right = 173.0
+offset_bottom = -19.0
+text = "Mom's voice"
+
+[node name="Button" type="Button" parent="." unique_id=1892556145]
+offset_left = 990.0
+offset_top = 25.0
+offset_right = 1050.0
+offset_bottom = 63.0
+text = "Exit"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1010909376]
+clip_contents = true
+offset_left = 1186.0
+offset_top = 666.0
+offset_right = 1986.0
+offset_bottom = 1466.0
+scale = Vector2(0.25, 0.25)
+stream = ExtResource("4_txgal")
+autoplay = true
+loop = true
+
+[connection signal="item_selected" from="Recorder/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="page_update" from="TellTaleStory" to="." method="_on_tell_tale_story_page_update"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
