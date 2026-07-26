@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Script" uid="uid://dwl3koja4hqs5" path="res://node_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_wtcfe"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_0e48y"]
+
+[node name="Node2D" type="Node2D" unique_id=660807159]
+script = ExtResource("1_0e48y")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=2001169456]
+position = Vector2(79, 70)
+texture = ExtResource("1_wtcfe")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=85139996]
+position = Vector2(358, 72)
+texture = ExtResource("1_wtcfe")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2051923700]
+stream = SubResource("AudioStreamMicrophone_0e48y")
+autoplay = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1937701248]
+offset_left = 42.0
+offset_top = 178.0
+offset_right = 546.0
+offset_bottom = 205.0
+
+[node name="InputDevice" type="OptionButton" parent="." unique_id=159697974]
+offset_left = 53.0
+offset_top = 261.0
+offset_right = 246.0
+offset_bottom = 315.0
+
+[connection signal="item_selected" from="InputDevice" to="." method="_on_input_device_item_selected"]
