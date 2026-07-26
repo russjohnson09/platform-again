@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dwl3koja4hqs5" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="VideoStream" uid="uid://c36rdjfm70nng" path="res://assets/Real_Human_Heart_Turntable.ogv" id="3_epypp"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_0e48y"]
 
@@ -68,6 +69,17 @@ text = "Play"
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1750000486]
 stream = SubResource("AudioStream_0e48y")
 autoplay = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2006276863]
+clip_contents = true
+offset_left = 659.0
+offset_top = 226.0
+offset_right = 1459.0
+offset_bottom = 1026.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("3_epypp")
+autoplay = true
+loop = true
 
 [connection signal="item_selected" from="InputDevice" to="." method="_on_input_device_item_selected"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
