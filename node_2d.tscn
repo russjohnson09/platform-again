@@ -5,6 +5,8 @@
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_0e48y"]
 
+[sub_resource type="AudioStream" id="AudioStream_0e48y"]
+
 [node name="Node2D" type="Node2D" unique_id=660807159]
 script = ExtResource("1_0e48y")
 
@@ -19,6 +21,7 @@ texture = ExtResource("1_wtcfe")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2051923700]
 stream = SubResource("AudioStreamMicrophone_0e48y")
 autoplay = true
+bus = &"RecordingBus"
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1937701248]
 offset_left = 42.0
@@ -32,4 +35,42 @@ offset_top = 261.0
 offset_right = 246.0
 offset_bottom = 315.0
 
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1232368632]
+offset_left = 677.0
+offset_top = 18.0
+offset_right = 805.0
+offset_bottom = 146.0
+texture_normal = ExtResource("1_wtcfe")
+
+[node name="TimerLimitRecord" type="Timer" parent="." unique_id=214441237]
+
+[node name="TimerLabel" type="Label" parent="." unique_id=332266834]
+offset_left = 557.0
+offset_top = 275.0
+offset_right = 652.0
+offset_bottom = 333.0
+text = "60"
+
+[node name="RecordButton" type="Button" parent="." unique_id=2056210092]
+offset_left = 51.0
+offset_top = 333.0
+offset_right = 195.0
+offset_bottom = 372.0
+text = "Record"
+
+[node name="PlayButton" type="Button" parent="." unique_id=970805628]
+offset_left = 49.0
+offset_top = 393.0
+offset_right = 193.0
+offset_bottom = 432.0
+text = "Play"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1750000486]
+stream = SubResource("AudioStream_0e48y")
+autoplay = true
+
 [connection signal="item_selected" from="InputDevice" to="." method="_on_input_device_item_selected"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="TimerLimitRecord" to="." method="_on_timer_limit_record_timeout"]
+[connection signal="pressed" from="RecordButton" to="." method="_on_record_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
