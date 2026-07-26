@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dwl3koja4hqs5" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="VideoStream" uid="uid://c36rdjfm70nng" path="res://assets/Real_Human_Heart_Turntable.ogv" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://c08t4gvohrdvp" path="res://assets/Red-Heart-vector-2731436.svg" id="4_0hol4"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_0e48y"]
 
@@ -35,13 +36,6 @@ offset_left = 53.0
 offset_top = 261.0
 offset_right = 246.0
 offset_bottom = 315.0
-
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1232368632]
-offset_left = 677.0
-offset_top = 18.0
-offset_right = 805.0
-offset_bottom = 146.0
-texture_normal = ExtResource("1_wtcfe")
 
 [node name="TimerLimitRecord" type="Timer" parent="." unique_id=214441237]
 
@@ -81,8 +75,20 @@ stream = ExtResource("3_epypp")
 autoplay = true
 loop = true
 
+[node name="Exit" type="Button" parent="." unique_id=37871561]
+offset_left = 957.0
+offset_top = 23.0
+offset_right = 1101.0
+offset_bottom = 62.0
+text = "Exit"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1141924198]
+position = Vector2(934, 125)
+texture_normal = ExtResource("4_0hol4")
+
 [connection signal="item_selected" from="InputDevice" to="." method="_on_input_device_item_selected"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="TimerLimitRecord" to="." method="_on_timer_limit_record_timeout"]
 [connection signal="pressed" from="RecordButton" to="." method="_on_record_button_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

@@ -1,4 +1,7 @@
 extends Node2D
+# https://www.youtube.com/watch?v=MeURXJij6PA&t=1s
+# https://www.youtube.com/watch?v=K0ibZAnmCbg
+
 #https://github.com/godotengine/godot-demo-projects/blob/master/audio/mic_record/MicRecord.gd
 #https://www.youtube.com/watch?v=cMEw2XQOgXM
 #  WARNING: servers/audio/audio_server.cpp:1854 - You must enable the project setting "audio/driver/enable_input" to use audio capture.
@@ -172,3 +175,14 @@ func _on_record_button_pressed() -> void:
 		#start_recording()
 	#else:
 		#stop_recording()
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
+
+
+func _on_touch_screen_button_pressed() -> void:
+	
+	get_tree().quit()
+	pass # Replace with function body.
