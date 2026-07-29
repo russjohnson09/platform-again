@@ -2,6 +2,8 @@ extends Node2D
 
 
 
+@export var speed_scale = 4.0
+
 # Clouds are 256 x 256.
 
 # Clamp Loop Interpolation will set the animation back to zero on the loop.
@@ -25,6 +27,6 @@ extends Node2D
 
 
 func _ready() -> void:
-	$AnimationPlayer.speed_scale = 1.6
+	$AnimationPlayer.speed_scale = speed_scale
 
 	$AnimationPlayer.play('new_animation')

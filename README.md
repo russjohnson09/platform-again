@@ -6,3 +6,7 @@ Navigate to Project in the top menu.
 Select Project Settings.
 Go to Rendering > Textures.
 Change the Default Texture Filter to Nearest.
+
+
+
+https://github.com/godot-extended-libraries/godot-debug-menu
