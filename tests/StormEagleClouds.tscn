@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dyragbva55bqb"]
+
+[ext_resource type="Texture2D" uid="uid://cundbyf3bf0os" path="res://assets/storm_eagle_clouds.png" id="1_bq3jj"]
+
+[node name="StormEagleClouds5" type="Sprite2D" unique_id=452476979]
+scale = Vector2(5, 5)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds5" type="Sprite2D" parent="." unique_id=50738410]
+position = Vector2(256, 0)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds6" type="Sprite2D" parent="." unique_id=512142985]
+position = Vector2(0, 256)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds7" type="Sprite2D" parent="." unique_id=2113761409]
+position = Vector2(256, 255)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds8" type="Sprite2D" parent="." unique_id=181747235]
+position = Vector2(0, 511)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds5" type="Sprite2D" parent="StormEagleClouds8" unique_id=894654735]
+position = Vector2(256, 0)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds6" type="Sprite2D" parent="StormEagleClouds8" unique_id=1446653959]
+position = Vector2(0, 256)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds7" type="Sprite2D" parent="StormEagleClouds8" unique_id=1407269966]
+position = Vector2(256, 255)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds9" type="Sprite2D" parent="." unique_id=1597434800]
+position = Vector2(512, 0)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds5" type="Sprite2D" parent="StormEagleClouds9" unique_id=986708343]
+position = Vector2(256, 0)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds6" type="Sprite2D" parent="StormEagleClouds9" unique_id=904777931]
+position = Vector2(0, 256)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds7" type="Sprite2D" parent="StormEagleClouds9" unique_id=428263251]
+position = Vector2(256, 255)
+texture = ExtResource("1_bq3jj")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)

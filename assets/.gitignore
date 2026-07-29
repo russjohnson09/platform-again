@@ -16,4 +16,18 @@
 
 # -rw-r--r-- 1 russj 197609 22K Jul 29 00:14 storm_eagle_clouds.png
 # -rw-r--r-- 1 russj 197609 12K Jul 29 00:10 tell_tale_heart.md
+
+
+# https://www.spriters-resource.com/snes/mmx/asset/27770/
+
+
+!storm_eagle_stage_with_transparency.png
 !storm_eagle_clouds.png
+
+
+# https://forum.godotengine.org/t/how-to-make-texture-repeat-on-scale-2d/743/5
+!storm_eagle_clouds_cropped.png
+
+
+# https://commons.wikimedia.org/wiki/File:European_starling_in_CP_(33849).jpg
+!European_starling_in_CP_(33849).jpg

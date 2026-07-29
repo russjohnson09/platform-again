@@ -1,4 +1,11 @@
+https://github.com/godot-extended-libraries/godot-debug-menu
+
+
+
+
+
 https://github.com/blacknoize404/Godot-Direct-Audio-Input-Recorder-and-WAV-24-bits-Tools.git
+
 
 
 
