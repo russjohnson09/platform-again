@@ -10,3 +10,4 @@ Change the Default Texture Filter to Nearest.
 
 
 https://github.com/godot-extended-libraries/godot-debug-menu
+
