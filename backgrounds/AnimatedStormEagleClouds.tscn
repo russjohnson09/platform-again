@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cfbb3qku4ldpy"]
+
+[ext_resource type="Script" uid="uid://bwkls5v5738rv" path="res://backgrounds/animated_storm_eagle_clouds.gd" id="1_i0g15"]
+[ext_resource type="PackedScene" uid="uid://c6yh27jry6pfs" path="res://backgrounds/StormEagleClouds.tscn" id="1_yt8g8"]
+[ext_resource type="Texture2D" uid="uid://chy37psx7m2yd" path="res://assets/storm_eagle_clouds_cropped.png" id="3_rslut"]
+
+[sub_resource type="Animation" id="Animation_yt8g8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StormEagleClouds5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-414, -184)]
+}
+
+[sub_resource type="Animation" id="Animation_i0g15"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StormEagleClouds5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -256), Vector2(-256, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rslut"]
+_data = {
+&"RESET": SubResource("Animation_yt8g8"),
+&"new_animation": SubResource("Animation_i0g15")
+}
+
+[node name="AnimatedStormEagleClouds" type="Node2D" unique_id=1874699781]
+script = ExtResource("1_i0g15")
+
+[node name="StormEagleClouds5" parent="." unique_id=452476979 instance=ExtResource("1_yt8g8")]
+position = Vector2(-414, -184)
+
+[node name="StormEagleClouds8" parent="StormEagleClouds5" unique_id=2080607769 instance=ExtResource("1_yt8g8")]
+position = Vector2(512, 0)
+metadata/_edit_lock_ = true
+
+[node name="StormEagleClouds9" parent="StormEagleClouds5" unique_id=981203376 instance=ExtResource("1_yt8g8")]
+position = Vector2(0, 512)
+metadata/_edit_lock_ = true
+
+[node name="StormEagleClouds8" parent="StormEagleClouds5/StormEagleClouds9" unique_id=628916016 instance=ExtResource("1_yt8g8")]
+position = Vector2(512, 0)
+
+[node name="StormEagleClouds10" parent="StormEagleClouds5" unique_id=1119937602 instance=ExtResource("1_yt8g8")]
+position = Vector2(1024, 0)
+metadata/_edit_lock_ = true
+
+[node name="StormEagleClouds8" parent="StormEagleClouds5/StormEagleClouds10" unique_id=1854493981 instance=ExtResource("1_yt8g8")]
+position = Vector2(512, 0)
+
+[node name="StormEagleClouds9" parent="StormEagleClouds5/StormEagleClouds10" unique_id=513742228 instance=ExtResource("1_yt8g8")]
+position = Vector2(0, 512)
+
+[node name="StormEagleClouds8" parent="StormEagleClouds5/StormEagleClouds10/StormEagleClouds9" unique_id=673330334 instance=ExtResource("1_yt8g8")]
+position = Vector2(512, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1798193507]
+libraries/ = SubResource("AnimationLibrary_rslut")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1065105710]
+texture_repeat = 2
+position = Vector2(-256, -256)
+scale = Vector2(1.1880009, 1.2140001)
+texture = ExtResource("3_rslut")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 2560)

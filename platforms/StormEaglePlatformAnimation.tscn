@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://cklxihskf3lhx"]
+
+[ext_resource type="Script" uid="uid://bpd4octvyxeki" path="res://platforms/storm_eagle_platform_animation.gd" id="1_8hchd"]
+[ext_resource type="Texture2D" uid="uid://beabr2c12scys" path="res://assets/storm_eagle_stage_with_transparency.png" id="2_eidqs"]
+
+[sub_resource type="Animation" id="Animation_8hchd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainPlatformSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(934, 1782, 30, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainPlatformSprite/StormEagleStageWithTransparency2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(980, 1807, 6, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_eidqs"]
+resource_name = "default"
+loop_mode = 1
+step = 0.0625
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainPlatformSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.8125),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(934, 1782, 30, 16), Rect2(966, 1782, 30, 16), Rect2(998, 1782, 30, 16), Rect2(1029, 1782, 30, 17)]
+}
+
+[sub_resource type="Animation" id="Animation_bdblh"]
+resource_name = "default_2"
+loop_mode = 1
+step = 0.0625
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainPlatformSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.8125),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(934, 1782, 30, 16), Rect2(966, 1782, 30, 16), Rect2(998, 1782, 30, 16), Rect2(1029, 1782, 30, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainPlatformSprite/StormEagleStageWithTransparency2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1875, 0.375, 0.5625, 0.8125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(980, 1807, 6, 6), Rect2(987, 1807, 6, 6), Rect2(994, 1807, 6, 6), Rect2(1001, 1807, 6, 6), Rect2(1008, 1807, 6, 6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eidqs"]
+_data = {
+&"RESET": SubResource("Animation_8hchd"),
+&"default": SubResource("Animation_eidqs"),
+&"default_2": SubResource("Animation_bdblh")
+}
+
+[sub_resource type="Animation" id="Animation_6urtw"]
+resource_name = "default"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainPlatformSprite/StormEagleStageWithTransparency2:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(980, 1807, 6, 6), Rect2(987, 1807, 6, 6), Rect2(994, 1807, 6, 6), Rect2(1001, 1807, 6, 6), Rect2(1008, 1807, 6, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_y2d0e"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uiqqb"]
+_data = {
+&"default": SubResource("Animation_6urtw"),
+&"new_animation": SubResource("Animation_y2d0e")
+}
+
+[node name="StormEaglePlatformAnimation" type="Node2D" unique_id=213783858]
+script = ExtResource("1_8hchd")
+
+[node name="MainPlatformSprite" type="Sprite2D" parent="." unique_id=1660943852]
+texture = ExtResource("2_eidqs")
+centered = false
+region_enabled = true
+region_rect = Rect2(934, 1782, 30, 16)
+
+[node name="StormEagleStageWithTransparency2" type="Sprite2D" parent="MainPlatformSprite" unique_id=799326987]
+position = Vector2(12, 7)
+texture = ExtResource("2_eidqs")
+centered = false
+region_enabled = true
+region_rect = Rect2(980, 1807, 6, 6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2074431216]
+libraries/ = SubResource("AnimationLibrary_eidqs")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=131490110]
+libraries/ = SubResource("AnimationLibrary_uiqqb")

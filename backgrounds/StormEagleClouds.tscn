@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c6yh27jry6pfs"]
+
+[ext_resource type="Texture2D" uid="uid://cundbyf3bf0os" path="res://assets/storm_eagle_clouds.png" id="1_d1lup"]
+
+[node name="StormEagleClouds5" type="Sprite2D" unique_id=452476979]
+texture = ExtResource("1_d1lup")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds5" type="Sprite2D" parent="." unique_id=50738410]
+position = Vector2(256, 0)
+texture = ExtResource("1_d1lup")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds6" type="Sprite2D" parent="." unique_id=512142985]
+position = Vector2(0, 256)
+texture = ExtResource("1_d1lup")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)
+
+[node name="StormEagleClouds7" type="Sprite2D" parent="." unique_id=2113761409]
+position = Vector2(256, 256)
+texture = ExtResource("1_d1lup")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 256, 256)

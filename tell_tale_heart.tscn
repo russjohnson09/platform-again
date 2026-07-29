@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b23pxm0krw36b" path="res://tell_tale_heart.gd" id="1_dd8ww"]
 [ext_resource type="PackedScene" uid="uid://diiyphvk3p0fo" path="res://ui/recorder/recorder.tscn" id="2_6o2cp"]
 [ext_resource type="PackedScene" uid="uid://lwrmfm1ah8m4" path="res://ui/tell_tale_story/tell_tale_story.tscn" id="3_wldyk"]
-[ext_resource type="VideoStream" uid="uid://c36rdjfm70nng" path="res://assets/Real_Human_Heart_Turntable.ogv" id="4_txgal"]
 
 [node name="TellTaleHeart" type="Node2D" unique_id=1423836503]
 script = ExtResource("1_dd8ww")
@@ -40,17 +39,6 @@ offset_top = 25.0
 offset_right = 1050.0
 offset_bottom = 63.0
 text = "Exit"
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1010909376]
-clip_contents = true
-offset_left = 1186.0
-offset_top = 666.0
-offset_right = 1986.0
-offset_bottom = 1466.0
-scale = Vector2(0.25, 0.25)
-stream = ExtResource("4_txgal")
-autoplay = true
-loop = true
 
 [connection signal="item_selected" from="Recorder/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="page_update" from="TellTaleStory" to="." method="_on_tell_tale_story_page_update"]

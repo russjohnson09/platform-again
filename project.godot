@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Tell Tale Heart"
-run/main_scene="uid://bdfu8gjh3gjr8"
+config/name="Platform Again"
+run/main_scene="uid://rv2d8cp1blv3"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/image="uid://c08t4gvohrdvp"
 config/icon="uid://c08t4gvohrdvp"
@@ -23,7 +23,6 @@ driver/enable_input=true
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 
@@ -37,6 +36,7 @@ enabled=PackedStringArray("res://addons/direct_audio_and_wav_24bits/plugin.cfg")
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
