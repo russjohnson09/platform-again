@@ -31,3 +31,20 @@
 
 # https://commons.wikimedia.org/wiki/File:European_starling_in_CP_(33849).jpg
 !European_starling_in_CP_(33849).jpg
+
+
+# https://www.spriters-resource.com/pc_computer/gravitycircuit/asset/495225/
+!PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/*
+
+
+
+# https://www.youtube.com/watch?v=KRPPmKv3RX4
+# https://www.youtube.com/watch?v=ipsDm-bQOoI
+
+# Animated texture works also a tileset can have animation
+# Atlas merged using merge tool in godot.
+
+# https://github.com/godotengine/godot/issues/70860
+!br-plat-10000-merged.png
+
+!br-plat-*-merged.png
