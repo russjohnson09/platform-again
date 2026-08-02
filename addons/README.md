@@ -42,3 +42,8 @@ func _on_stop_button_pressed() -> void:
     # Play it back immediately
     player.play_24bit(recording)
 ```
+
+
+
+# Parallax Preview
+https://github.com/KoBeWi/Godot-Parallax2D-Preview
