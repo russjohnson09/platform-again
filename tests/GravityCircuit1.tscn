@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cjdse26mf366o"]
+
+[ext_resource type="PackedScene" uid="uid://d0p2sgqrwvh08" path="res://platforms/CommanderGround.tscn" id="1_uayqo"]
+
+[node name="GravityCircuit1" type="Node2D" unique_id=2122141663]
+
+[node name="CommanderGround" parent="." unique_id=1933483819 instance=ExtResource("1_uayqo")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=296480039]
+anchor_mode = 0
+zoom = Vector2(4, 4)

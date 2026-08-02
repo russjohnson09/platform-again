@@ -1,100 +1,31 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Script" uid="uid://dwl3koja4hqs5" path="res://node_2d.gd" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_wtcfe"]
-[ext_resource type="VideoStream" uid="uid://c36rdjfm70nng" path="res://assets/Real_Human_Heart_Turntable.ogv" id="3_epypp"]
-[ext_resource type="Texture2D" uid="uid://c08t4gvohrdvp" path="res://assets/Red-Heart-vector-2731436.svg" id="4_0hol4"]
-[ext_resource type="PackedScene" uid="uid://diiyphvk3p0fo" path="res://ui/recorder/recorder.tscn" id="5_q6r6c"]
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_0e48y"]
-
-[sub_resource type="AudioStream" id="AudioStream_0e48y"]
 
 [node name="Node2D" type="Node2D" unique_id=660807159]
 script = ExtResource("1_0e48y")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=2001169456]
-position = Vector2(79, 70)
-texture = ExtResource("1_wtcfe")
-
-[node name="Icon2" type="Sprite2D" parent="." unique_id=85139996]
-position = Vector2(358, 72)
-texture = ExtResource("1_wtcfe")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2051923700]
-stream = SubResource("AudioStreamMicrophone_0e48y")
-autoplay = true
-bus = &"RecordingBus"
-
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1937701248]
-offset_left = 42.0
-offset_top = 178.0
-offset_right = 546.0
-offset_bottom = 205.0
-
-[node name="InputDevice" type="OptionButton" parent="." unique_id=159697974]
-offset_left = 53.0
-offset_top = 261.0
-offset_right = 246.0
-offset_bottom = 315.0
-
-[node name="TimerLimitRecord" type="Timer" parent="." unique_id=214441237]
-
-[node name="TimerLabel" type="Label" parent="." unique_id=332266834]
-offset_left = 557.0
-offset_top = 275.0
-offset_right = 652.0
-offset_bottom = 333.0
-text = "60"
-
-[node name="RecordButton" type="Button" parent="." unique_id=2056210092]
-offset_left = 51.0
-offset_top = 333.0
-offset_right = 195.0
-offset_bottom = 372.0
-text = "Record"
-
-[node name="PlayButton" type="Button" parent="." unique_id=970805628]
-offset_left = 49.0
-offset_top = 393.0
-offset_right = 193.0
-offset_bottom = 432.0
-text = "Play"
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1750000486]
-stream = SubResource("AudioStream_0e48y")
-autoplay = true
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2006276863]
-clip_contents = true
-offset_left = 659.0
-offset_top = 226.0
-offset_right = 1459.0
-offset_bottom = 1026.0
-scale = Vector2(0.5, 0.5)
-stream = ExtResource("3_epypp")
-autoplay = true
-loop = true
-
-[node name="Exit" type="Button" parent="." unique_id=37871561]
-offset_left = 957.0
-offset_top = 23.0
-offset_right = 1101.0
-offset_bottom = 62.0
+[node name="Button" type="Button" parent="." unique_id=768511857]
+offset_left = 368.0
+offset_top = 8.0
+offset_right = 405.0
+offset_bottom = 39.0
 text = "Exit"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1141924198]
-position = Vector2(934, 125)
-texture_normal = ExtResource("4_0hol4")
+[node name="Button2" type="Button" parent="." unique_id=215311875]
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 85.0
+offset_bottom = 39.0
+text = "GravityCircuit1"
 
-[node name="Recorder" parent="." unique_id=970981238 instance=ExtResource("5_q6r6c")]
-position = Vector2(75, 491)
-max_record_time = 10
-save_name = "test2.wav"
+[node name="Button3" type="Button" parent="." unique_id=1034791592]
+offset_left = 48.0
+offset_top = 80.0
+offset_right = 172.0
+offset_bottom = 111.0
+text = "TestMovingBackgroundClouds"
 
-[connection signal="item_selected" from="InputDevice" to="." method="_on_input_device_item_selected"]
-[connection signal="timeout" from="TimerLimitRecord" to="." method="_on_timer_limit_record_timeout"]
-[connection signal="pressed" from="RecordButton" to="." method="_on_record_button_pressed"]
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
