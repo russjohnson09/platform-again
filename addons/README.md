@@ -42,3 +42,25 @@ func _on_stop_button_pressed() -> void:
     # Play it back immediately
     player.play_24bit(recording)
 ```
+
+
+
+# Parallax Preview
+https://github.com/KoBeWi/Godot-Parallax2D-Preview
+
+
+2D Parallax Backgrounds | Godot 4.5
+
+https://www.youtube.com/watch?v=dIEGn8uOIwg
+
+
+I didn't really have the greatest luck with this plugin.
+
+I really just set the parallax2d underneath a 2d node and moved it around until I got what I wanted.
+
+Any change to the scroll scale messes things up though because it shifts everything around.
+
+
+
+The autoscroll is interesting and I might try that for the moving clouds background.
+

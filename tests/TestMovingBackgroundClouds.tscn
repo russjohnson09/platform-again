@@ -1,23 +1,17 @@
 [gd_scene format=3 uid="uid://rv2d8cp1blv3"]
 
 [ext_resource type="Script" uid="uid://csyk0grkrqrlu" path="res://tests/moving_background_clouds.gd" id="1_ysprq"]
-[ext_resource type="Texture2D" uid="uid://cundbyf3bf0os" path="res://assets/storm_eagle_clouds.png" id="2_elfgw"]
-[ext_resource type="PackedScene" uid="uid://cfbb3qku4ldpy" path="res://backgrounds/AnimatedStormEagleClouds.tscn" id="3_le3s5"]
 [ext_resource type="Texture2D" uid="uid://beabr2c12scys" path="res://assets/storm_eagle_stage_with_transparency.png" id="4_nmuug"]
 [ext_resource type="PackedScene" uid="uid://cklxihskf3lhx" path="res://platforms/StormEaglePlatformAnimation.tscn" id="5_elfgw"]
+[ext_resource type="Texture2D" uid="uid://chy37psx7m2yd" path="res://assets/storm_eagle_clouds_cropped.png" id="6_le3s5"]
 
 [node name="TestMovingBackgroundClouds" type="Node2D" unique_id=394736978]
 script = ExtResource("1_ysprq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=941530719]
-position = Vector2(10, 300)
+position = Vector2(-27, 307)
 anchor_mode = 0
 zoom = Vector2(2, 2)
-
-[node name="StormEagleClouds3" type="Sprite2D" parent="." unique_id=889471893]
-position = Vector2(-765, -355)
-texture = ExtResource("2_elfgw")
-metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="." unique_id=475865652]
 z_index = 100
@@ -36,13 +30,6 @@ offset_right = 128.0
 offset_bottom = 95.0
 text = "tesatsatasetaste"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=741556044]
-layer = -5
-
-[node name="AnimatedStormEagleClouds" parent="CanvasLayer" unique_id=1874699781 instance=ExtResource("3_le3s5")]
-z_index = -1
-metadata/_edit_lock_ = true
-
 [node name="StormEagleStageWithTransparency" type="Sprite2D" parent="." unique_id=1918157664]
 position = Vector2(3211, -135)
 texture = ExtResource("4_nmuug")
@@ -59,3 +46,32 @@ metadata/_edit_lock_ = true
 [node name="StormEaglePlatformAnimation3" parent="." unique_id=1628016234 instance=ExtResource("5_elfgw")]
 position = Vector2(323, 495)
 metadata/_edit_lock_ = true
+
+[node name="Node2D" type="Node2D" parent="." unique_id=154907438]
+z_index = -100
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D" unique_id=611732413]
+repeat_size = Vector2(256, 256)
+autoscroll = Vector2(-100, 100)
+repeat_times = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D" unique_id=2055020738]
+texture = ExtResource("6_le3s5")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1787825258]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=684269570]
+offset_right = 149.0
+offset_bottom = 67.0
+text = "DEBUG"
+
+[node name="Button2" type="Button" parent="CanvasLayer" unique_id=49693330]
+offset_left = 1.0
+offset_top = 88.0
+offset_right = 150.0
+offset_bottom = 155.0
+text = "CLOUD SPEED"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dhxbym2p2nl6i"]
+
+[ext_resource type="Texture2D" uid="uid://cnxxq8a2nbke4" path="res://assets/mega_man_2_title_screen_2321.png" id="1_g2hb1"]
+[ext_resource type="Script" uid="uid://suetcsvj644w" path="res://tests/mega_man_2_parallax.gd" id="1_msf2u"]
+
+[sub_resource type="Curve2D" id="Curve2D_msf2u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -16, 496, 0, 0, 0, 0, -16, 0)
+}
+point_count = 2
+
+[node name="MegaMan2Parallax" type="Node2D" unique_id=786655315]
+script = ExtResource("1_msf2u")
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=998836627]
+offset_left = -1.0
+offset_right = 255.0
+offset_bottom = 488.0
+color = Color(0, 0, 0, 1)
+
+[node name="Building" type="Sprite2D" parent="." unique_id=876539354]
+position = Vector2(160, 90)
+texture = ExtResource("1_g2hb1")
+centered = false
+region_enabled = true
+region_rect = Rect2(1712, 117, 95, 550)
+
+[node name="ColorRect" type="ColorRect" parent="Building" unique_id=394126000]
+offset_left = 32.0
+offset_top = 390.0
+offset_right = 40.0
+offset_bottom = 406.0
+color = Color(0.1254902, 1, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Building" unique_id=1491011283]
+offset_left = 32.0
+offset_top = 462.0
+offset_right = 40.0
+offset_bottom = 478.0
+color = Color(0.1254902, 1, 1, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Building" unique_id=569171902]
+offset_left = 32.0
+offset_top = 334.0
+offset_right = 40.0
+offset_bottom = 350.0
+color = Color(0.1254902, 1, 1, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Building" unique_id=1857224080]
+offset_left = 35.0
+offset_top = 213.0
+offset_right = 43.0
+offset_bottom = 229.0
+color = Color(0.1254902, 1, 1, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Building" unique_id=1910245748]
+offset_left = 35.0
+offset_top = 149.0
+offset_right = 43.0
+offset_bottom = 165.0
+color = Color(0.1254902, 1, 1, 1)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1327543509]
+curve = SubResource("Curve2D_msf2u")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1462610685]
+position = Vector2(-16, 496)
+rotates = false
+cubic_interp = false
+
+[node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D" unique_id=537652644]
+position = Vector2(0, 7)
+anchor_mode = 0
+zoom = Vector2(4, 4)
+limit_bottom = 478
+
+[node name="Node2D" type="Node2D" parent="." unique_id=472843346]
+position = Vector2(0, 368)
+metadata/_edit_group_ = true
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D" unique_id=294609666]
+scroll_scale = Vector2(1, 0.8)
+
+[node name="City" type="Sprite2D" parent="Node2D/Parallax2D" unique_id=630645690]
+position = Vector2(-1, 0)
+texture = ExtResource("1_g2hb1")
+centered = false
+region_enabled = true
+region_rect = Rect2(1551, 443, 161, 224)

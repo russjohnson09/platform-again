@@ -48,3 +48,13 @@
 !br-plat-10000-merged.png
 
 !br-plat-*-merged.png
+
+
+!mega_man_2_title_screen_2321.png
+#https://www.spriters-resource.com/nes/mm2/asset/2321/
+# 
+# I love how the windows are stored as sprites, as the NES has only one background layer, so devs usually make horizontal parallax and heck, Battletoads made parallax possible thanks to updating the background at different positions using CHR-RAM.
+# Mega Man 2 also used CHR-RAM, but Capcom decided to push the limit not by updating the background, but by storing the moving tower objects as sprites.
+
+
+# https://github.com/KoBeWi/Godot-Parallax2D-Preview
