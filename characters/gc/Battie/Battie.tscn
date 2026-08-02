@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k7sigqqyp8a" path="res://characters/gc/Battie/battie.gd" id="1_fsrsh"]
 [ext_resource type="PackedScene" uid="uid://dx7wf75u5hrc5" path="res://characters/gc/Battie/BattieAnimation.tscn" id="2_b3uus"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_b3uus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsrsh"]
 size = Vector2(28, 26)
@@ -20,36 +21,12 @@ shape = SubResource("RectangleShape2D_fsrsh")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=455558755]
 
 [node name="Buttons" type="Node2D" parent="CanvasLayer" unique_id=485074294]
-modulate = Color(1, 1, 1, 0.3647059)
+modulate = Color(1, 1, 1, 0.011764706)
 
-[node name="RightBtn" type="Button" parent="CanvasLayer/Buttons" unique_id=2017317163]
-offset_left = 951.0
-offset_top = 127.0
-offset_right = 1144.0
-offset_bottom = 472.0
-text = "RIGHT"
-
-[node name="LeftBtn" type="Button" parent="CanvasLayer/Buttons" unique_id=2029609313]
-offset_left = 2.0
-offset_top = 111.0
-offset_right = 195.0
-offset_bottom = 456.0
-text = "LEFT
-"
-
-[node name="UpBtn" type="Button" parent="CanvasLayer/Buttons" unique_id=106301903]
-offset_left = 308.0
-offset_top = 14.0
-offset_right = 807.0
-offset_bottom = 128.0
-text = "UP"
-
-[node name="DownBtn" type="Button" parent="CanvasLayer/Buttons" unique_id=1671841728]
-offset_left = 339.0
-offset_top = 515.0
-offset_right = 838.0
-offset_bottom = 629.0
-text = "DOWN"
+[node name="RightBtn" type="TouchScreenButton" parent="CanvasLayer/Buttons" unique_id=1188943836]
+position = Vector2(979, 129)
+scale = Vector2(1.3046869, 2.7109377)
+texture_normal = ExtResource("3_b3uus")
 
 [node name="DebugBtn" type="Button" parent="CanvasLayer/Buttons" unique_id=912702565]
 self_modulate = Color(1, 1, 1, 0)
@@ -67,5 +44,21 @@ offset_right = 217.0
 offset_bottom = 637.0
 text = "DEBUG"
 
+[node name="LeftBtn" type="TouchScreenButton" parent="CanvasLayer/Buttons" unique_id=1863159681]
+position = Vector2(7, 70)
+scale = Vector2(1.3203125, 3.3437498)
+texture_normal = ExtResource("3_b3uus")
+
+[node name="DownBtn" type="TouchScreenButton" parent="CanvasLayer/Buttons" unique_id=1583160684]
+position = Vector2(344.00006, 515.99994)
+scale = Vector2(3.7734368, 1.0156254)
+texture_normal = ExtResource("3_b3uus")
+
+[node name="UpBtn" type="TouchScreenButton" parent="CanvasLayer/Buttons" unique_id=919811232]
+position = Vector2(321, 16)
+scale = Vector2(3.7734368, 1.0156254)
+texture_normal = ExtResource("3_b3uus")
+
+[connection signal="pressed" from="CanvasLayer/Buttons/RightBtn" to="." method="_on_right_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/DebugBtn" to="." method="_on_debug_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/Main" to="." method="_on_main_pressed"]

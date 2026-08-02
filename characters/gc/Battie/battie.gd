@@ -20,9 +20,9 @@ func set_input_prefix():
 		input_prefix = 'p2_'
 
 func get_input_direction_x():
-	if $CanvasLayer/Buttons/RightBtn.button_pressed:
+	if $CanvasLayer/Buttons/RightBtn.is_pressed():
 		return 1.0
-	elif $CanvasLayer/Buttons/LeftBtn.button_pressed:
+	elif $CanvasLayer/Buttons/LeftBtn.is_pressed():
 		return -1.0
 	
 	if Input.is_action_pressed(input_prefix + "right"):
@@ -33,9 +33,9 @@ func get_input_direction_x():
 	return 0.0
 	
 func get_input_direction_y():
-	if $CanvasLayer/Buttons/DownBtn.button_pressed:
+	if $CanvasLayer/Buttons/DownBtn.is_pressed():
 		return 1.0
-	elif $CanvasLayer/Buttons/UpBtn.button_pressed:
+	elif $CanvasLayer/Buttons/UpBtn.is_pressed():
 		return -1.0
 	
 	if Input.is_action_pressed(input_prefix + "down"):
