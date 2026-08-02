@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ciwgskhge70o2"]
+
+[ext_resource type="Texture2D" uid="uid://bmm11icxhljdu" path="res://assets/x/SNES - Mega Man X - Playable Characters - X.png" id="1_0xgw7"]
+[ext_resource type="Texture2D" uid="uid://dg5g0v275lr3t" path="res://assets/x/mmx_xsheet.png" id="2_n40dn"]
+[ext_resource type="Texture2D" path="res://assets/x/mmx_sheet_split/mmx_xsheet_1.png" id="3_tidxv"]
+[ext_resource type="Texture2D" path="res://assets/x/mmx_sheet_split/mmx_xsheet_2.png" id="4_regw3"]
+[ext_resource type="Texture2D" uid="uid://db3t1y5hmma8n" path="res://assets/x/mmx_sheet_split/4.png" id="5_g8eyh"]
+[ext_resource type="Texture2D" uid="uid://b7ukf5nkmrien" path="res://assets/x/mmx_sheet_split/5.png" id="6_llkbl"]
+[ext_resource type="Texture2D" uid="uid://d11400fmki1ow" path="res://assets/x/mmx_sheet_split/6.png" id="7_5b0jh"]
+[ext_resource type="Texture2D" uid="uid://b1k127cflm4r5" path="res://assets/x/mmx_sheet_split/7.png" id="8_amioe"]
+[ext_resource type="Texture2D" path="res://assets/x/mmx_sheet_split/mmx_xsheet_3.png" id="9_w3p4u"]
+[ext_resource type="Texture2D" uid="uid://daayvqwd72lp5" path="res://assets/x/mmx_sheet_split/8.png" id="10_qjwlt"]
+[ext_resource type="Texture2D" uid="uid://nurev36mu16f" path="res://assets/x/mmx_sheet_split/9.png" id="11_tt70h"]
+[ext_resource type="Texture2D" uid="uid://bpyqwh8dhfupx" path="res://assets/x/mmx_sheet_split/10.png" id="12_dh5mi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mymj6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tidxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_regw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g8eyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_llkbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5b0jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_amioe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w3p4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qjwlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tt70h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dh5mi")
+}],
+"loop": true,
+"name": &"beam_in",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tidxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_regw3")
+}],
+"loop": true,
+"name": &"beam_in_1",
+"speed": 5.0
+}]
+
+[node name="TestX1" type="Node2D" unique_id=1826247123]
+
+[node name="SnesMegaManXPlayableCharactersX" type="Sprite2D" parent="." unique_id=576206118]
+position = Vector2(-712, 1741)
+texture = ExtResource("1_0xgw7")
+
+[node name="MmxXsheet" type="Sprite2D" parent="." unique_id=697169093]
+position = Vector2(346, 1163)
+texture = ExtResource("2_n40dn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1784305436]
+sprite_frames = SubResource("SpriteFrames_mymj6")
+animation = &"beam_in"
+frame_progress = 0.7787967
+centered = false
