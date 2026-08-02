@@ -25,9 +25,17 @@ func _on_button_3_pressed() -> void:
 
 	pass # Replace with function body.
 
-
+# armadillo
+#https://www.youtube.com/watch?v=S4JOJNTGaUs
 func _on_button_4_pressed() -> void:
 	
 	get_tree().change_scene_to_file("res://tests/MegaMan2Parallax.tscn")
+
+	pass # Replace with function body.
+
+
+func _on_button_5_pressed() -> void:
+	get_tree().change_scene_to_file("res://tests/TestMegaMan2Tileset.tscn"
+)
 
 	pass # Replace with function body.

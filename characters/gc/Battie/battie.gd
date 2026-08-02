@@ -20,6 +20,11 @@ func set_input_prefix():
 		input_prefix = 'p2_'
 
 func get_input_direction_x():
+	if $CanvasLayer/Buttons/RightBtn.button_pressed:
+		return 1.0
+	elif $CanvasLayer/Buttons/LeftBtn.button_pressed:
+		return -1.0
+	
 	if Input.is_action_pressed(input_prefix + "right"):
 		return 1.0
 	elif Input.is_action_pressed(input_prefix + "left"):
@@ -28,6 +33,11 @@ func get_input_direction_x():
 	return 0.0
 	
 func get_input_direction_y():
+	if $CanvasLayer/Buttons/DownBtn.button_pressed:
+		return 1.0
+	elif $CanvasLayer/Buttons/UpBtn.button_pressed:
+		return -1.0
+	
 	if Input.is_action_pressed(input_prefix + "down"):
 		return 1.0
 	elif Input.is_action_pressed(input_prefix + "up"):
@@ -64,3 +74,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	
+
+func show_hide_debug():
+	
+	if 	DebugMenu.style == DebugMenu.Style.VISIBLE_DETAILED:
+		DebugMenu.style = DebugMenu.Style.HIDDEN
+	else:
+		DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
+
+func _on_debug_btn_pressed() -> void:
+	show_hide_debug()
