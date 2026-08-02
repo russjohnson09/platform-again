@@ -24,3 +24,19 @@ I don't think there is easy support for that. I would ensure that the sprites ar
 
 I will need to use AnimationPlayer for some more complex things but for the simple running animations etc. I'd really like to just be able to use AnimatedSprite2d.
 
+
+
+https://www.spriters-resource.com/mobile/mmxiphone/asset/148943/
+
+
+https://www.spriters-resource.com/snes/mmx/
+
+
+https://github.com/mstan/MegaManXSNESRecomp
+
+
+The mega man x assets are all the stages themselves and not the tilesets.
+
+The iphone version has a better tileset ready to use.
+
+

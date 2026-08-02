@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://gs85oc3753d0"]
+
+[ext_resource type="Script" uid="uid://2k7sigqqyp8a" path="res://characters/gc/Battie/battie.gd" id="1_fsrsh"]
+[ext_resource type="PackedScene" uid="uid://dx7wf75u5hrc5" path="res://characters/gc/Battie/BattieAnimation.tscn" id="2_b3uus"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsrsh"]
+size = Vector2(28, 26)
+
+[node name="Battie" type="CharacterBody2D" unique_id=735000778]
+script = ExtResource("1_fsrsh")
+
+[node name="BattieAnimation" parent="." unique_id=1976656732 instance=ExtResource("2_b3uus")]
+scale = Vector2(2, 2)
+centered = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=398629765]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_fsrsh")
