@@ -1,5 +1,7 @@
 
-*
+*.png
+*.import
+!*.gitignore
 !.gitignore
 
 
@@ -58,3 +60,6 @@
 
 
 # https://github.com/KoBeWi/Godot-Parallax2D-Preview
+
+
+!x/.gitignore
