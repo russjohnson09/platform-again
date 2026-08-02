@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Platform Again"
 config/version="1.0.0"
-run/main_scene="uid://rv2d8cp1blv3"
+run/main_scene="uid://4pqund3nukl7"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/image="uid://c08t4gvohrdvp"
 config/icon="uid://sfyrt6ap8gwe"

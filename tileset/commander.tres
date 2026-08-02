@@ -1,0 +1,99 @@
+[gd_resource type="TileSet" format=3 uid="uid://bvfwebrwd4qdu"]
+
+[ext_resource type="Texture2D" uid="uid://dkgxjio72m45l" path="res://assets/br-plat-20000-merged.png" id="1_xunsy"]
+[ext_resource type="Texture2D" uid="uid://c1rbgijqpgm2p" path="res://assets/br-plat-10000-merged.png" id="2_hqlhq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nq21d"]
+texture = ExtResource("1_xunsy")
+separation = Vector2i(1, 0)
+0:0/animation_columns = 4
+0:0/animation_speed = 5.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:1/animation_columns = 4
+0:1/animation_speed = 5.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+0:2/0 = 0
+0:3/animation_speed = 5.0
+0:3/0 = 0
+0:4/0 = 0
+0:5/animation_speed = 5.0
+0:5/0 = 0
+0:6/animation_columns = 4
+0:6/animation_speed = 5.0
+0:6/animation_frame_0/duration = 1.0
+0:6/animation_frame_1/duration = 1.0
+0:6/animation_frame_2/duration = 1.0
+0:6/animation_frame_3/duration = 1.0
+0:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f8s5s"]
+texture = ExtResource("2_hqlhq")
+separation = Vector2i(1, 0)
+0:0/animation_columns = 5
+0:0/animation_speed = 5.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8, 8.5, -8, 8.5, 8, -8.5, 8)
+0:1/animation_columns = 5
+0:1/animation_speed = 5.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8, 8.5, -8, 8.5, 8, -8.5, 8)
+0:2/animation_columns = 5
+0:2/animation_speed = 5.0
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8, 8.5, -8, 8.5, 8, -8.5, 8)
+0:3/animation_columns = 5
+0:3/animation_frame_0/duration = 1.0
+0:3/animation_frame_1/duration = 1.0
+0:3/animation_frame_2/duration = 1.0
+0:3/animation_frame_3/duration = 1.0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8, 8.5, -8, 8.5, 8, -8.5, 8)
+0:4/animation_columns = 5
+0:4/animation_speed = 5.0
+0:4/animation_frame_0/duration = 1.0
+0:4/animation_frame_1/duration = 1.0
+0:4/animation_frame_2/duration = 1.0
+0:4/animation_frame_3/duration = 1.0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8, 8.5, -8, 8.5, 8, -8.5, 8)
+0:5/animation_columns = 5
+0:5/animation_frame_0/duration = 1.0
+0:5/animation_frame_1/duration = 1.0
+0:5/animation_frame_2/duration = 1.0
+0:5/animation_frame_3/duration = 1.0
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8, 8.5, -8, 8.5, 8, -8.5, 8)
+0:6/animation_columns = 5
+0:6/animation_speed = 5.0
+0:6/animation_frame_0/duration = 1.0
+0:6/animation_frame_1/duration = 1.0
+0:6/animation_frame_2/duration = 1.0
+0:6/animation_frame_3/duration = 1.0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8, 8.5, -8, 8.5, 8, -8.5, 8)
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/7 = SubResource("TileSetAtlasSource_f8s5s")
+sources/17 = SubResource("TileSetAtlasSource_nq21d")
+tile_proxies/coords_level = [[1, Vector2i(0, 0)], [7, Vector2i(0, 0)], [1, Vector2i(0, 1)], [7, Vector2i(0, 1)], [1, Vector2i(0, 2)], [7, Vector2i(0, 2)], [1, Vector2i(0, 3)], [7, Vector2i(0, 3)], [1, Vector2i(0, 4)], [7, Vector2i(0, 4)], [1, Vector2i(0, 5)], [7, Vector2i(0, 5)], [1, Vector2i(0, 6)], [7, Vector2i(0, 6)], [3, Vector2i(0, 0)], [7, Vector2i(1, 0)], [3, Vector2i(0, 1)], [7, Vector2i(1, 1)], [3, Vector2i(0, 2)], [7, Vector2i(1, 2)], [3, Vector2i(0, 3)], [7, Vector2i(1, 3)], [3, Vector2i(0, 4)], [7, Vector2i(1, 4)], [3, Vector2i(0, 5)], [7, Vector2i(1, 5)], [3, Vector2i(0, 6)], [7, Vector2i(1, 6)], [4, Vector2i(0, 0)], [7, Vector2i(2, 0)], [4, Vector2i(0, 1)], [7, Vector2i(2, 1)], [4, Vector2i(0, 2)], [7, Vector2i(2, 2)], [4, Vector2i(0, 3)], [7, Vector2i(2, 3)], [4, Vector2i(0, 4)], [7, Vector2i(2, 4)], [4, Vector2i(0, 5)], [7, Vector2i(2, 5)], [4, Vector2i(0, 6)], [7, Vector2i(2, 6)], [5, Vector2i(0, 0)], [7, Vector2i(3, 0)], [5, Vector2i(0, 1)], [7, Vector2i(3, 1)], [5, Vector2i(0, 2)], [7, Vector2i(3, 2)], [5, Vector2i(0, 3)], [7, Vector2i(3, 3)], [5, Vector2i(0, 4)], [7, Vector2i(3, 4)], [5, Vector2i(0, 5)], [7, Vector2i(3, 5)], [5, Vector2i(0, 6)], [7, Vector2i(3, 6)], [6, Vector2i(0, 0)], [7, Vector2i(4, 0)], [6, Vector2i(0, 1)], [7, Vector2i(4, 1)], [6, Vector2i(0, 2)], [7, Vector2i(4, 2)], [6, Vector2i(0, 3)], [7, Vector2i(4, 3)], [6, Vector2i(0, 4)], [7, Vector2i(4, 4)], [6, Vector2i(0, 5)], [7, Vector2i(4, 5)], [6, Vector2i(0, 6)], [7, Vector2i(4, 6)], [13, Vector2i(0, 0)], [17, Vector2i(0, 0)], [13, Vector2i(0, 1)], [17, Vector2i(0, 1)], [13, Vector2i(0, 2)], [17, Vector2i(0, 2)], [13, Vector2i(0, 3)], [17, Vector2i(0, 3)], [13, Vector2i(0, 4)], [17, Vector2i(0, 4)], [13, Vector2i(0, 5)], [17, Vector2i(0, 5)], [13, Vector2i(0, 6)], [17, Vector2i(0, 6)], [14, Vector2i(0, 0)], [17, Vector2i(1, 0)], [14, Vector2i(0, 1)], [17, Vector2i(1, 1)], [14, Vector2i(0, 2)], [17, Vector2i(1, 2)], [14, Vector2i(0, 3)], [17, Vector2i(1, 3)], [14, Vector2i(0, 4)], [17, Vector2i(1, 4)], [14, Vector2i(0, 5)], [17, Vector2i(1, 5)], [14, Vector2i(0, 6)], [17, Vector2i(1, 6)], [15, Vector2i(0, 0)], [17, Vector2i(2, 0)], [15, Vector2i(0, 1)], [17, Vector2i(2, 1)], [15, Vector2i(0, 2)], [17, Vector2i(2, 2)], [15, Vector2i(0, 3)], [17, Vector2i(2, 3)], [15, Vector2i(0, 4)], [17, Vector2i(2, 4)], [15, Vector2i(0, 5)], [17, Vector2i(2, 5)], [15, Vector2i(0, 6)], [17, Vector2i(2, 6)], [16, Vector2i(0, 0)], [17, Vector2i(3, 0)], [16, Vector2i(0, 1)], [17, Vector2i(3, 1)], [16, Vector2i(0, 2)], [17, Vector2i(3, 2)], [16, Vector2i(0, 3)], [17, Vector2i(3, 3)], [16, Vector2i(0, 4)], [17, Vector2i(3, 4)], [16, Vector2i(0, 5)], [17, Vector2i(3, 5)], [16, Vector2i(0, 6)], [17, Vector2i(3, 6)]]

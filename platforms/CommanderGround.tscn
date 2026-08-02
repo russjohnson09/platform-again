@@ -1,103 +1,23 @@
-[gd_scene format=3 uid="uid://d0p2sgqrwvh08"]
+[gd_scene format=4 uid="uid://d0p2sgqrwvh08"]
 
 [ext_resource type="Script" uid="uid://d2h22437utny8" path="res://platforms/commander_ground.gd" id="1_hepod"]
-[ext_resource type="Texture2D" uid="uid://birwnkc8x4lup" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-10000.png" id="1_ysa53"]
-[ext_resource type="Texture2D" uid="uid://brsfhje4g3a4c" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-10001.png" id="2_hepod"]
-[ext_resource type="Texture2D" uid="uid://c03iwojwyo55v" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-10002.png" id="3_1hdpc"]
-[ext_resource type="Texture2D" uid="uid://ctpqncew5p4jm" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-10003.png" id="4_cc0m1"]
-[ext_resource type="Texture2D" uid="uid://u8aes1m7bn33" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-20000.png" id="5_l7sbn"]
-[ext_resource type="Texture2D" uid="uid://b5hin3i7ybxwa" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-20001.png" id="6_pdol2"]
-[ext_resource type="Texture2D" uid="uid://1bxyqx8cv627" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-20002.png" id="7_iaay8"]
-[ext_resource type="Texture2D" uid="uid://dnsrq871hduvk" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-20003.png" id="8_gh5k4"]
-[ext_resource type="Texture2D" uid="uid://bvwxrwotclnnk" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-30000.png" id="9_s7kpi"]
-[ext_resource type="Texture2D" uid="uid://dvukhe5t65veh" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-30001.png" id="10_kqn2p"]
-[ext_resource type="Texture2D" uid="uid://dtnchjgmgmvao" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-30002.png" id="11_5ecqk"]
-[ext_resource type="Texture2D" uid="uid://dytx5qy02jm7q" path="res://assets/PC _ Computer - Gravity Circuit - Bosses - Commander Circuit/Commander Circuit sprites/commander_sprites/br-plat/br-plat-30003.png" id="12_1mgsq"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_p5j5n"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_ysa53")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_hepod")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_1hdpc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_cc0m1")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_u7kog"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_l7sbn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_pdol2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_iaay8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_gh5k4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0sccl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_s7kpi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_kqn2p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_5ecqk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_1mgsq")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="TileSet" uid="uid://bvfwebrwd4qdu" path="res://tileset/commander.tres" id="2_ko06d"]
 
 [node name="CommanderGround" type="Node2D" unique_id=1933483819]
 script = ExtResource("1_hepod")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1060661916]
-sprite_frames = SubResource("SpriteFrames_p5j5n")
-frame_progress = 0.73246574
-centered = false
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1934409495]
-position = Vector2(16, 0)
-sprite_frames = SubResource("SpriteFrames_u7kog")
-frame_progress = 0.255256
-centered = false
-
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=110227789]
-position = Vector2(32, 0)
-sprite_frames = SubResource("SpriteFrames_0sccl")
-frame_progress = 0.29486385
-centered = false
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=907123413]
-visible = false
 anchor_mode = 0
-enabled = false
 zoom = Vector2(5, 5)
 
-[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2103992061]
+tile_map_data = PackedByteArray("AAAAAAAABwAAAAAAAAABAAAAEQAAAAAAAAACAAAAEQAAAAAAAAADAAAAEQAAAAAAAAAEAAAAEQAAAAAAAAAFAAAAEQAAAAAAAAAGAAAAEQAAAAAAAAAHAAAAEQAAAAAAAAAIAAAAEQAAAAAAAAAJAAAAEQAAAAAAAAAKAAAAEQAAAAAAAAALAAAAEQAAAAAAAAABAAEAEQAAAAEAAAACAAEAEQAAAAEAAAADAAEAEQAAAAEAAAAEAAEAEQAAAAEAAAAFAAEAEQAAAAEAAAAGAAEAEQAAAAEAAAAHAAEAEQAAAAEAAAAIAAEAEQAAAAEAAAAJAAEAEQAAAAEAAAAKAAEAEQAAAAEAAAAAAAEABwAAAAEAAAAAAAIABwAAAAEAAAAAAAMABwAAAAEAAAAAAAQABwAAAAEAAAAAAAUABwAAAAEAAAABAAIAEQAAAAEAAAACAAIAEQAAAAEAAAADAAIAEQAAAAEAAAAEAAIAEQAAAAEAAAAFAAIAEQAAAAEAAAAGAAIAEQAAAAEAAAAHAAIAEQAAAAEAAAAIAAIAEQAAAAEAAAAJAAIAEQAAAAEAAAAKAAIAEQAAAAEAAAABAAMAEQAAAAEAAAACAAMAEQAAAAEAAAADAAMAEQAAAAEAAAAEAAMAEQAAAAEAAAAFAAMAEQAAAAEAAAAGAAMAEQAAAAEAAAAHAAMAEQAAAAEAAAAIAAMAEQAAAAEAAAAJAAMAEQAAAAEAAAAKAAMAEQAAAAEAAAALAAEAEQAAAAEAAAALAAIAEQAAAAEAAAALAAMAEQAAAAEAAAABAAQAEQAAAAEAAAACAAQAEQAAAAEAAAADAAQAEQAAAAEAAAAEAAQAEQAAAAEAAAAFAAQAEQAAAAEAAAAGAAQAEQAAAAEAAAAHAAQAEQAAAAEAAAAIAAQAEQAAAAEAAAAJAAQAEQAAAAEAAAAKAAQAEQAAAAEAAAALAAQAEQAAAAEAAAABAAUAEQAAAAEAAAACAAUAEQAAAAEAAAADAAUAEQAAAAEAAAAEAAUAEQAAAAEAAAAFAAUAEQAAAAEAAAAGAAUAEQAAAAEAAAAHAAUAEQAAAAEAAAAIAAUAEQAAAAEAAAAJAAUAEQAAAAEAAAAKAAUAEQAAAAEAAAALAAUAEQAAAAEAAAAAAAYABwAAAAYAAAABAAYAEQAAAAYAAAACAAYAEQAAAAYAAAADAAYAEQAAAAYAAAAEAAYAEQAAAAYAAAAFAAYAEQAAAAYAAAAGAAYAEQAAAAYAAAAHAAYAEQAAAAYAAAAIAAYAEQAAAAYAAAAJAAYAEQAAAAYAAAAKAAYAEQAAAAYAAAALAAYAEQAAAAYAAAA=")
+tile_set = ExtResource("2_ko06d")
+
+[node name="Button" type="Button" parent="." unique_id=1835079887]
+modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+text = "DEBUG"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
