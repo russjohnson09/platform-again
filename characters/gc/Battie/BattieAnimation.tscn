@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dx7wf75u5hrc5"]
+
+[ext_resource type="Texture2D" uid="uid://kkn1cq7fo81e" path="res://assets/gc/PC _ Computer - Gravity Circuit - Enemies - Battie/Battie/battie_sprites/flap-loop/flap-loop-0.png" id="1_a6tfn"]
+[ext_resource type="Texture2D" uid="uid://c1jhh4eaf6k6w" path="res://assets/gc/PC _ Computer - Gravity Circuit - Enemies - Battie/Battie/battie_sprites/flap-loop/flap-loop-1.png" id="2_rap8a"]
+[ext_resource type="Texture2D" uid="uid://chdewfoqrprec" path="res://assets/gc/PC _ Computer - Gravity Circuit - Enemies - Battie/Battie/battie_sprites/flap-loop/flap-loop-2.png" id="3_nx73c"]
+[ext_resource type="Texture2D" uid="uid://c2ed5m8u2m34t" path="res://assets/gc/PC _ Computer - Gravity Circuit - Enemies - Battie/Battie/battie_sprites/flap-loop/flap-loop-3.png" id="4_67kak"]
+[ext_resource type="Texture2D" uid="uid://casshs8b2skdq" path="res://assets/gc/PC _ Computer - Gravity Circuit - Enemies - Battie/Battie/battie_sprites/flap-loop/flap-loop-4.png" id="5_jqw3i"]
+[ext_resource type="Texture2D" uid="uid://cd20tuot1ky6g" path="res://assets/gc/PC _ Computer - Gravity Circuit - Enemies - Battie/Battie/battie_sprites/flap-loop/flap-loop-5.png" id="6_3ttvb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjyop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a6tfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rap8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nx73c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_67kak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jqw3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3ttvb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BattieAnimation" type="AnimatedSprite2D" unique_id=1976656732]
+modulate = Color(1, 0.6392157, 1, 1)
+sprite_frames = SubResource("SpriteFrames_qjyop")
+frame_progress = 0.36014596
+centered = false
