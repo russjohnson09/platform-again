@@ -59,4 +59,13 @@ offset_right = 709.0
 offset_bottom = 359.0
 text = "DEBUG"
 
+[node name="Main" type="Button" parent="CanvasLayer/Buttons" unique_id=1772034871]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 13.0
+offset_top = 566.0
+offset_right = 217.0
+offset_bottom = 637.0
+text = "DEBUG"
+
 [connection signal="pressed" from="CanvasLayer/Buttons/DebugBtn" to="." method="_on_debug_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Main" to="." method="_on_main_pressed"]

@@ -40,8 +40,16 @@ offset_right = 291.0
 offset_bottom = 223.0
 text = "MegaMan2Tileset"
 
+[node name="Button6" type="Button" parent="." unique_id=193374060]
+offset_left = 48.0
+offset_top = 240.0
+offset_right = 291.0
+offset_bottom = 271.0
+text = "X3"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]

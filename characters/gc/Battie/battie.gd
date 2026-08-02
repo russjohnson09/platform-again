@@ -84,3 +84,9 @@ func show_hide_debug():
 
 func _on_debug_btn_pressed() -> void:
 	show_hide_debug()
+
+
+func _on_main_pressed() -> void:
+	get_tree().change_scene_to_file("res://node_2d.tscn")
+
+	pass # Replace with function body.
