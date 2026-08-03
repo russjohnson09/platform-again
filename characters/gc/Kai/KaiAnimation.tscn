@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dauwmesru2nfy"]
+
+[ext_resource type="Texture2D" uid="uid://bmbxlqvhdrxk2" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20000.png" id="1_5vk0p"]
+[ext_resource type="Texture2D" uid="uid://ciyxcrorwl1p" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20001.png" id="2_40j3h"]
+[ext_resource type="Texture2D" uid="uid://byeb5d6e4j4dq" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20002.png" id="3_bg7yh"]
+[ext_resource type="Texture2D" uid="uid://biffckmbsccjf" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20003.png" id="4_7fux7"]
+[ext_resource type="Texture2D" uid="uid://hjuhs2bh5xkm" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20004.png" id="5_1rrdo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7qsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5vk0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_40j3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bg7yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7fux7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1rrdo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="KaiAnimation" type="AnimatedSprite2D" unique_id=685160002]
+sprite_frames = SubResource("SpriteFrames_k7qsy")
+frame_progress = 0.8618077
+centered = false
