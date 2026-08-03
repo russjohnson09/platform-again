@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://nund77ehycd6" path="res://assets/x3/tilesets/blizzard_buffalo_tileset.png" id="1_air8g"]
 [ext_resource type="PackedScene" uid="uid://gs85oc3753d0" path="res://characters/gc/Battie/Battie.tscn" id="1_ggbcd"]
 [ext_resource type="PackedScene" uid="uid://bium2qatywkby" path="res://characters/godot/GodotSquarePlayer.tscn" id="3_vpiw7"]
+[ext_resource type="PackedScene" uid="uid://c5qeytfq058y7" path="res://characters/gc/Kai/Kai.tscn" id="4_1kjqk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggbcd"]
 texture = ExtResource("1_air8g")
@@ -558,6 +559,7 @@ position = Vector2(215, 81)
 speed = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="Battie" unique_id=1940766166]
+enabled = false
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
@@ -584,3 +586,13 @@ tile_set = SubResource("TileSet_1kjqk")
 
 [node name="CharacterBody2D" parent="." unique_id=546696943 instance=ExtResource("3_vpiw7")]
 position = Vector2(70, 107)
+
+[node name="Kai" parent="." unique_id=621718200 instance=ExtResource("4_1kjqk")]
+position = Vector2(128, 296)
+scale = Vector2(2, 2)
+JUMP_SPEED = 600
+
+[node name="Camera2D" type="Camera2D" parent="Kai" unique_id=1785673944]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0

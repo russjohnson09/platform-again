@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c5qeytfq058y7"]
+
+[ext_resource type="Script" uid="uid://bf2ngo1grqqa4" path="res://characters/gc/Kai/kai.gd" id="1_6u3tq"]
+[ext_resource type="PackedScene" uid="uid://dauwmesru2nfy" path="res://characters/gc/Kai/KaiAnimation.tscn" id="2_7mmls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tkkt"]
+size = Vector2(25, 22)
+
+[node name="Kai" type="CharacterBody2D" unique_id=621718200]
+script = ExtResource("1_6u3tq")
+
+[node name="KaiAnimation" parent="." unique_id=685160002 instance=ExtResource("2_7mmls")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1473737362]
+position = Vector2(19.5, 20)
+shape = SubResource("RectangleShape2D_6tkkt")
