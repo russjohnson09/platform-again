@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bium2qatywkby"]
+
+[ext_resource type="Texture2D" uid="uid://xusn3wy61b20" path="res://assets/godot/player.png" id="1_qcung"]
+[ext_resource type="Script" uid="uid://2axo15pwauu2" path="res://characters/godot/godot_square_player.gd" id="1_vrr6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrr6v"]
+size = Vector2(16, 16)
+
+[node name="GodotSquarePlayer" type="CharacterBody2D" unique_id=546696943]
+script = ExtResource("1_vrr6v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2004051370]
+texture = ExtResource("1_qcung")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=517149364]
+shape = SubResource("RectangleShape2D_vrr6v")
