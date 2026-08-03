@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dauwmesru2nfy"]
+
+[ext_resource type="Texture2D" uid="uid://bmbxlqvhdrxk2" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20000.png" id="1_5vk0p"]
+[ext_resource type="Texture2D" uid="uid://ciyxcrorwl1p" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20001.png" id="2_40j3h"]
+[ext_resource type="Texture2D" uid="uid://byeb5d6e4j4dq" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20002.png" id="3_bg7yh"]
+[ext_resource type="Texture2D" uid="uid://biffckmbsccjf" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20003.png" id="4_7fux7"]
+[ext_resource type="Texture2D" uid="uid://hjuhs2bh5xkm" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_idle_/kai_idle_-20004.png" id="5_1rrdo"]
+[ext_resource type="Texture2D" uid="uid://cvwhqj2opl1gd" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-0.png" id="6_5j5dv"]
+[ext_resource type="Texture2D" uid="uid://yy5ahilngxu2" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-1.png" id="7_q3500"]
+[ext_resource type="Texture2D" uid="uid://b2etqoeksau8o" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-2.png" id="8_vs55q"]
+[ext_resource type="Texture2D" uid="uid://08rps18mo0pi" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-3.png" id="9_tfffx"]
+[ext_resource type="Texture2D" uid="uid://cu5bmy75xynfe" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-4.png" id="10_b2c18"]
+[ext_resource type="Texture2D" uid="uid://b88v50ckrd4wx" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-5.png" id="11_2m8yf"]
+[ext_resource type="Texture2D" uid="uid://cjlnjq3qac15g" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-6.png" id="12_adjx8"]
+[ext_resource type="Texture2D" uid="uid://ca2rll2gq7b5a" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-7.png" id="13_qq4wi"]
+[ext_resource type="Texture2D" uid="uid://dbm1s0jatkv48" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-8.png" id="14_fnlqj"]
+[ext_resource type="Texture2D" uid="uid://cr7j756yyjj8y" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_walk/kai_walk-9.png" id="15_cpfsh"]
+[ext_resource type="Texture2D" uid="uid://dtb3u5jt7kjxm" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_sprint/kai_sprint-0.png" id="16_ytfs4"]
+[ext_resource type="Texture2D" uid="uid://chneyqat5ya2l" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_sprint/kai_sprint-1.png" id="17_nel0j"]
+[ext_resource type="Texture2D" uid="uid://q28gpwlpq501" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_sprint/kai_sprint-2.png" id="18_8og1d"]
+[ext_resource type="Texture2D" uid="uid://bqu5xf688kc2c" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_sprint/kai_sprint-3.png" id="19_ctk1d"]
+[ext_resource type="Texture2D" uid="uid://betfrfea5d1bc" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_sprint/kai_sprint-4.png" id="20_kmuyx"]
+[ext_resource type="Texture2D" uid="uid://dtbkgsf6pvjyu" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_sprint/kai_sprint-5.png" id="21_tby3x"]
+[ext_resource type="Texture2D" uid="uid://x02220c30cu8" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_sprint/kai_sprint-6.png" id="22_as48b"]
+[ext_resource type="Texture2D" uid="uid://coltndhs4lufc" path="res://assets/gc/PC _ Computer - Gravity Circuit - Playable Characters - Kai/Kai sprites/kai_sprites/kai_sprint/kai_sprint-7.png" id="23_aak12"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7qsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5vk0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_40j3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bg7yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7fux7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1rrdo")
+}],
+"loop": true,
+"name": &"kai_idle_",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ytfs4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nel0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8og1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ctk1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_kmuyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tby3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_as48b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_aak12")
+}],
+"loop": true,
+"name": &"kai_sprint",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5j5dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q3500")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vs55q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tfffx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b2c18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2m8yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_adjx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qq4wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fnlqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cpfsh")
+}],
+"loop": true,
+"name": &"kai_walk",
+"speed": 5.0
+}]
+
+[node name="KaiAnimation" type="AnimatedSprite2D" unique_id=685160002]
+sprite_frames = SubResource("SpriteFrames_k7qsy")
+animation = &"kai_sprint"
+frame_progress = 0.500491
+centered = false
