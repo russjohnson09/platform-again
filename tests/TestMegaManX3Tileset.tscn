@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://bhu3rrelbwsfo"]
 
 [ext_resource type="Texture2D" uid="uid://nund77ehycd6" path="res://assets/x3/tilesets/blizzard_buffalo_tileset.png" id="1_air8g"]
-[ext_resource type="PackedScene" uid="uid://gs85oc3753d0" path="res://characters/gc/Battie/Battie.tscn" id="1_ggbcd"]
 [ext_resource type="PackedScene" uid="uid://bium2qatywkby" path="res://characters/godot/GodotSquarePlayer.tscn" id="3_vpiw7"]
 [ext_resource type="PackedScene" uid="uid://c5qeytfq058y7" path="res://characters/gc/Kai/Kai.tscn" id="4_1kjqk"]
+[ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="4_48f0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggbcd"]
 texture = ExtResource("1_air8g")
@@ -554,16 +554,6 @@ sources/1 = SubResource("TileSetAtlasSource_vpiw7")
 
 [node name="TestMegaManX3Tileset" type="Node2D" unique_id=1578362182]
 
-[node name="Battie" parent="." unique_id=735000778 instance=ExtResource("1_ggbcd")]
-position = Vector2(215, 81)
-speed = 200.0
-
-[node name="Camera2D" type="Camera2D" parent="Battie" unique_id=1940766166]
-enabled = false
-zoom = Vector2(1.5, 1.5)
-limit_left = 0
-limit_top = 0
-
 [node name="Node2D2" type="Node2D" parent="." unique_id=2123295961]
 scale = Vector2(2, 2)
 metadata/_edit_lock_ = true
@@ -596,3 +586,5 @@ JUMP_SPEED = 600
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
+
+[node name="CanvasLayer" parent="." unique_id=1212252444 instance=ExtResource("4_48f0s")]
