@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+
+signal player_out_of_bounds
 #const WALK_FORCE = 600
 #const WALK_MAX_SPEED = 400
 #const STOP_FORCE = 1300
@@ -90,3 +92,9 @@ func _physics_process(delta: float) -> void:
 	elif velocity.x > 0.1:
 		animation.flip_h = false
 	
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	
+	player_out_of_bounds.emit()
+	pass # Replace with function body.
