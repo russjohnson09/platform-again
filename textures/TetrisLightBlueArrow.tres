@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://necwrpuq7802"]
+
+[ext_resource type="Texture2D" uid="uid://d0k6fhwwts1bk" path="res://assets/tetris_attack/SNES - Tetris Attack - Miscellaneous - Block Set.png" id="1_qhw2d"]
+
+[resource]
+atlas = ExtResource("1_qhw2d")
+region = Rect2(79, 3, 16, 16)

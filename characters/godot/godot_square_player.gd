@@ -16,9 +16,6 @@ const PUSH_FORCE = 80.0
 
 @export var speed = 100.0
 
-@onready var animation = $BattieAnimation
-
-
 var input_prefix = "p1_"
 
 

@@ -14,3 +14,8 @@ script = ExtResource("1_6u3tq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1473737362]
 position = Vector2(19.5, 20)
 shape = SubResource("RectangleShape2D_6tkkt")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=806366813]
+rect = Rect2(-49, -36, 150, 116)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
