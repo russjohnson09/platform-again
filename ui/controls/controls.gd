@@ -50,3 +50,23 @@ func show_hide_debug():
 
 func _on_debug_btn_pressed() -> void:
 	show_hide_debug()
+
+
+func _on_down_btn_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_down_btn_released() -> void:
+	pass # Replace with function body.
+
+	
+func _on_action_1_pressed() -> void:
+	Input.action_press(input_prefix + "jump")
+
+	pass # Replace with function body.
+
+
+func _on_action_1_released() -> void:
+	Input.action_release(input_prefix + "jump")
+
+	pass # Replace with function body.

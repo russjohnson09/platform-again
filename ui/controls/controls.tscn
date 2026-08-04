@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://d2ovtq0s4g6sr"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_4cla1"]
 [ext_resource type="Script" uid="uid://doddj6nx0n7cm" path="res://ui/controls/controls.gd" id="1_57bhu"]
+[ext_resource type="Texture2D" uid="uid://necwrpuq7802" path="res://textures/TetrisLightBlueArrow.tres" id="2_wnppa"]
+[ext_resource type="Texture2D" uid="uid://ngxf4c7jo7v5" path="res://textures/TetrisLightBlueArrowPressed.tres" id="3_d3c44"]
 
 [node name="Controls" type="CanvasLayer" unique_id=1212252444]
 script = ExtResource("1_57bhu")
 
 [node name="Buttons" type="Node2D" parent="." unique_id=1026730365]
-modulate = Color(1, 1, 1, 0.08235294)
 
 [node name="RightBtn" type="TouchScreenButton" parent="Buttons" unique_id=977851811]
-position = Vector2(979, 129)
-scale = Vector2(1.3046869, 2.7109377)
-texture_normal = ExtResource("1_4cla1")
+position = Vector2(210.00002, 506)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_wnppa")
+texture_pressed = ExtResource("3_d3c44")
 
 [node name="DebugBtn" type="Button" parent="Buttons" unique_id=974638787]
 self_modulate = Color(1, 1, 1, 0)
@@ -30,20 +32,31 @@ offset_right = 217.0
 offset_bottom = 637.0
 text = "DEBUG"
 
-[node name="LeftBtn" type="TouchScreenButton" parent="Buttons" unique_id=1847041833]
-position = Vector2(7, 70)
-scale = Vector2(1.3203125, 3.3437498)
-texture_normal = ExtResource("1_4cla1")
+[node name="LeftBtn" type="TouchScreenButton" parent="Buttons" unique_id=1265222864]
+position = Vector2(17, 551)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_wnppa")
+texture_pressed = ExtResource("3_d3c44")
 
-[node name="DownBtn" type="TouchScreenButton" parent="Buttons" unique_id=479255362]
-position = Vector2(344.00006, 515.99994)
-scale = Vector2(3.7734368, 1.0156254)
-texture_normal = ExtResource("1_4cla1")
+[node name="UpBtn" type="TouchScreenButton" parent="Buttons" unique_id=765956545]
+position = Vector2(93, 447)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_wnppa")
+texture_pressed = ExtResource("3_d3c44")
 
-[node name="UpBtn" type="TouchScreenButton" parent="Buttons" unique_id=847240355]
-position = Vector2(321, 16)
-scale = Vector2(3.7734368, 1.0156254)
-texture_normal = ExtResource("1_4cla1")
+[node name="DownBtn" type="TouchScreenButton" parent="Buttons" unique_id=1352941041]
+position = Vector2(136, 622)
+rotation = 3.1415927
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_wnppa")
+texture_pressed = ExtResource("3_d3c44")
+
+[node name="Action1" type="TouchScreenButton" parent="Buttons" unique_id=782647094]
+position = Vector2(1008.00006, 514)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_wnppa")
+texture_pressed = ExtResource("3_d3c44")
 
 [connection signal="pressed" from="Buttons/RightBtn" to="." method="_on_right_btn_pressed"]
 [connection signal="released" from="Buttons/RightBtn" to="." method="_on_right_btn_released"]
@@ -52,3 +65,7 @@ texture_normal = ExtResource("1_4cla1")
 [connection signal="released" from="Buttons/LeftBtn" to="." method="_on_left_btn_released"]
 [connection signal="pressed" from="Buttons/UpBtn" to="." method="_on_up_btn_pressed"]
 [connection signal="released" from="Buttons/UpBtn" to="." method="_on_up_btn_released"]
+[connection signal="pressed" from="Buttons/DownBtn" to="." method="_on_down_btn_pressed"]
+[connection signal="released" from="Buttons/DownBtn" to="." method="_on_down_btn_released"]
+[connection signal="pressed" from="Buttons/Action1" to="." method="_on_action_1_pressed"]
+[connection signal="released" from="Buttons/Action1" to="." method="_on_action_1_released"]

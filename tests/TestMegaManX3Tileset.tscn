@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://bhu3rrelbwsfo"]
 
 [ext_resource type="Texture2D" uid="uid://nund77ehycd6" path="res://assets/x3/tilesets/blizzard_buffalo_tileset.png" id="1_air8g"]
+[ext_resource type="Script" uid="uid://bptsyg7o61nf" path="res://tests/test_mega_man_x_3_tileset.gd" id="1_t4rdv"]
 [ext_resource type="PackedScene" uid="uid://bium2qatywkby" path="res://characters/godot/GodotSquarePlayer.tscn" id="3_vpiw7"]
 [ext_resource type="PackedScene" uid="uid://c5qeytfq058y7" path="res://characters/gc/Kai/Kai.tscn" id="4_1kjqk"]
 [ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="4_48f0s"]
+[ext_resource type="PackedScene" uid="uid://djikgpl1jye8" path="res://platforms/x3/BlizzardPlatform1.tscn" id="5_48f0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggbcd"]
 texture = ExtResource("1_air8g")
@@ -552,7 +554,46 @@ margins = Vector2i(9, 5)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_vpiw7")
 
+[sub_resource type="Animation" id="Animation_48f0s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform1Animation/BlizzardPlatform1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 346)]
+}
+
+[sub_resource type="Animation" id="Animation_t4rdv"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform1Animation/BlizzardPlatform1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(360, 346), Vector2(521, 263)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3udw1"]
+_data = {
+&"RESET": SubResource("Animation_48f0s"),
+&"new_animation": SubResource("Animation_t4rdv")
+}
+
 [node name="TestMegaManX3Tileset" type="Node2D" unique_id=1578362182]
+script = ExtResource("1_t4rdv")
 
 [node name="Node2D2" type="Node2D" parent="." unique_id=2123295961]
 scale = Vector2(2, 2)
@@ -588,3 +629,9 @@ limit_left = 0
 limit_top = 0
 
 [node name="CanvasLayer" parent="." unique_id=1212252444 instance=ExtResource("4_48f0s")]
+
+[node name="Platform1Animation" type="AnimationPlayer" parent="." unique_id=1599023478]
+libraries/ = SubResource("AnimationLibrary_3udw1")
+
+[node name="BlizzardPlatform1" parent="Platform1Animation" unique_id=112877437 instance=ExtResource("5_48f0s")]
+position = Vector2(360, 346)
