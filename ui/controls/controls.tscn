@@ -10,9 +10,9 @@ script = ExtResource("1_57bhu")
 [node name="Buttons" type="Node2D" parent="." unique_id=1026730365]
 
 [node name="RightBtn" type="TouchScreenButton" parent="Buttons" unique_id=977851811]
-position = Vector2(210.00002, 506)
+position = Vector2(358, 451)
 rotation = 1.5707964
-scale = Vector2(3, 3)
+scale = Vector2(6, 6)
 texture_normal = ExtResource("2_wnppa")
 texture_pressed = ExtResource("3_d3c44")
 
@@ -33,28 +33,28 @@ offset_bottom = 637.0
 text = "DEBUG"
 
 [node name="LeftBtn" type="TouchScreenButton" parent="Buttons" unique_id=1265222864]
-position = Vector2(17, 551)
+position = Vector2(12.000002, 547)
 rotation = -1.5707964
-scale = Vector2(3, 3)
+scale = Vector2(6, 6)
 texture_normal = ExtResource("2_wnppa")
 texture_pressed = ExtResource("3_d3c44")
 
 [node name="UpBtn" type="TouchScreenButton" parent="Buttons" unique_id=765956545]
-position = Vector2(93, 447)
-scale = Vector2(3, 3)
+position = Vector2(134, 341)
+scale = Vector2(6, 6)
 texture_normal = ExtResource("2_wnppa")
 texture_pressed = ExtResource("3_d3c44")
 
 [node name="DownBtn" type="TouchScreenButton" parent="Buttons" unique_id=1352941041]
-position = Vector2(136, 622)
+position = Vector2(223, 646)
 rotation = 3.1415927
-scale = Vector2(3, 3)
+scale = Vector2(6, 6)
 texture_normal = ExtResource("2_wnppa")
 texture_pressed = ExtResource("3_d3c44")
 
 [node name="Action1" type="TouchScreenButton" parent="Buttons" unique_id=782647094]
 position = Vector2(1008.00006, 514)
-scale = Vector2(3, 3)
+scale = Vector2(6, 6)
 texture_normal = ExtResource("2_wnppa")
 texture_pressed = ExtResource("3_d3c44")
 
