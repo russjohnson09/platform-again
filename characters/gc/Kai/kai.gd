@@ -45,6 +45,19 @@ func get_walk_dir() -> float:
 	var right =  (input_prefix + "right")
 	return Input.get_axis(left,right)
 
+
+func update_image(walk_dir: float):
+	
+	if abs(walk_dir) < 0.1:
+		animation.play("kai_idle_")
+	else:
+		animation.play("kai_sprint")
+		
+	if animation.flip_h == false and walk_dir < 0:
+		animation.flip_h = true
+	elif walk_dir > 0.1:
+		animation.flip_h = false
+
 func _physics_process(delta: float) -> void:
 #	https://www.reddit.com/r/godot/comments/11m8rtk/what_does_the_colon_sign_mean_in_the_variable/
 # Use : for explicity typing. Raise type errors early and often
@@ -52,6 +65,7 @@ func _physics_process(delta: float) -> void:
 	# Horizontal movement code. First, get the player's input.
 	#var walk := WALK_FORCE * walk_dir
 	
+	update_image(walk_dir)
 	#var walk = WALK_FORCE * walk_dir
 	var walk := (WALK_FORCE * walk_dir)
 	# Slow down the player if they're not trying to move.
@@ -82,15 +96,15 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and Input.is_action_just_pressed(input_prefix + &"jump"):
 		velocity.y = -JUMP_SPEED
 	
-	if abs(velocity.x) < 0.1:
-		animation.play("kai_idle_")
-	else:
-		animation.play("kai_sprint")
-		
-	if animation.flip_h == false and velocity.x < 0:
-		animation.flip_h = true
-	elif velocity.x > 0.1:
-		animation.flip_h = false
+	#if abs(velocity.x) < 0.1:
+		#animation.play("kai_idle_")
+	#else:
+		#animation.play("kai_sprint")
+		#
+	#if animation.flip_h == false and velocity.x < 0:
+		#animation.flip_h = true
+	#elif velocity.x > 0.1:
+		#animation.flip_h = false
 	
 
 

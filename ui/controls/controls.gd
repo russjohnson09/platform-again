@@ -4,7 +4,7 @@ extends CanvasLayer
 @export var input_prefix = "p1_"
 
 
-
+@onready var joystick := $"Node2D/Virtual Joystick"
 
 
 func _on_right_btn_pressed() -> void:
@@ -70,3 +70,9 @@ func _on_action_1_released() -> void:
 	Input.action_release(input_prefix + "jump")
 
 	pass # Replace with function body.
+
+	
+
+#func _on_virtual_joystick_gui_input(event: InputEvent) -> void:
+	#print(event)
+	#pass # Replace with function body.
