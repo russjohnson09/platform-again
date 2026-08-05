@@ -71,11 +71,8 @@ func _on_action_1_released() -> void:
 
 	pass # Replace with function body.
 
-func _physics_process(delta: float) -> void:
-	print(joystick)
-	pass
 	
 
-func _on_virtual_joystick_gui_input(event: InputEvent) -> void:
-	print(event)
-	pass # Replace with function body.
+#func _on_virtual_joystick_gui_input(event: InputEvent) -> void:
+	#print(event)
+	#pass # Replace with function body.
