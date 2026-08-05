@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://doddj6nx0n7cm" path="res://ui/controls/controls.gd" id="1_57bhu"]
 [ext_resource type="Texture2D" uid="uid://necwrpuq7802" path="res://textures/TetrisLightBlueArrow.tres" id="2_wnppa"]
 [ext_resource type="Texture2D" uid="uid://ngxf4c7jo7v5" path="res://textures/TetrisLightBlueArrowPressed.tres" id="3_d3c44"]
+[ext_resource type="Script" uid="uid://dk813ex0bndig" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="4_d3c44"]
 
 [node name="Controls" type="CanvasLayer" unique_id=1212252444]
 script = ExtResource("1_57bhu")
@@ -58,6 +59,17 @@ scale = Vector2(6, 6)
 texture_normal = ExtResource("2_wnppa")
 texture_pressed = ExtResource("3_d3c44")
 
+[node name="Node2D" type="Node2D" parent="." unique_id=1420196862]
+position = Vector2(-39, 298)
+
+[node name="Virtual Joystick" type="Control" parent="Node2D" unique_id=980678188]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_d3c44")
+metadata/_custom_type_script = "uid://dk813ex0bndig"
+
 [connection signal="pressed" from="Buttons/RightBtn" to="." method="_on_right_btn_pressed"]
 [connection signal="released" from="Buttons/RightBtn" to="." method="_on_right_btn_released"]
 [connection signal="pressed" from="Buttons/DebugBtn" to="." method="_on_debug_btn_pressed"]
@@ -69,3 +81,4 @@ texture_pressed = ExtResource("3_d3c44")
 [connection signal="released" from="Buttons/DownBtn" to="." method="_on_down_btn_released"]
 [connection signal="pressed" from="Buttons/Action1" to="." method="_on_action_1_pressed"]
 [connection signal="released" from="Buttons/Action1" to="." method="_on_action_1_released"]
+[connection signal="gui_input" from="Node2D/Virtual Joystick" to="." method="_on_virtual_joystick_gui_input"]
