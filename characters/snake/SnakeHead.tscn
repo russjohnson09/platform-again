@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://4gml1rcsjr4c"]
+
+[ext_resource type="Script" uid="uid://dkf7s67qvqdm3" path="res://characters/snake/snake_head.gd" id="1_2ydsq"]
+
+[node name="SnakeHead" type="Node2D" unique_id=176474361]
+script = ExtResource("1_2ydsq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=493292102]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1194795142]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
