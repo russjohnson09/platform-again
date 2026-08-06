@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b0v8kmjvrelj6"]
+
+[ext_resource type="PackedScene" uid="uid://4gml1rcsjr4c" path="res://characters/snake/SnakeHead.tscn" id="1_0v881"]
+[ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="1_s81pc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s81pc"]
+size = Vector2(106, 242)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v881"]
+size = Vector2(96, 240)
+
+[node name="TestSnake" type="Node2D" unique_id=1760337068]
+
+[node name="SnakeHead" parent="." unique_id=176474361 node_paths=PackedStringArray("parent") instance=ExtResource("1_0v881")]
+position = Vector2(4, 0)
+parent = NodePath("..")
+
+[node name="SnakeHead2" type="Node2D" parent="." unique_id=2139229166]
+
+[node name="ColorRect" type="ColorRect" parent="SnakeHead2" unique_id=463171253]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=280586220]
+zoom = Vector2(3, 3)
+
+[node name="Controls" parent="." unique_id=1212252444 instance=ExtResource("1_s81pc")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1538561966]
+offset_left = -192.0
+offset_top = -112.0
+offset_right = -96.0
+offset_bottom = 112.0
+color = Color(0, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="ColorRect" unique_id=469066916]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Area2D" unique_id=1315978925]
+position = Vector2(43, 111)
+shape = SubResource("RectangleShape2D_s81pc")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2017451392]
+offset_left = 96.0
+offset_top = -112.0
+offset_right = 192.0
+offset_bottom = 112.0
+color = Color(0, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="ColorRect2" unique_id=519826367]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/Area2D" unique_id=654436031]
+position = Vector2(48, 112)
+shape = SubResource("RectangleShape2D_0v881")

@@ -51,3 +51,7 @@ func _on_button_6_pressed() -> void:
 func _on_touch_screen_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://tests/TestMegaManX3Tileset.tscn")
 	pass # Replace with function body.
+
+
+func _on_touch_screen_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://tests/TestSnake.tscn")

@@ -25,7 +25,6 @@ extends Node2D
 
 
 
-
 func _ready() -> void:
 	$AnimationPlayer.speed_scale = speed_scale
 
