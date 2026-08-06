@@ -13,6 +13,8 @@ var test = ""
 	#tail = body
 	#print("add", tail)
 
+#Stack overflow (stack size: 1024). Check for infinite recursion in your script.
+
 func move_to(move_to: Vector2i):
 	last_position = position
 	
