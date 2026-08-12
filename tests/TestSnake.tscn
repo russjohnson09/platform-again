@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b0v8kmjvrelj6"]
 
-[ext_resource type="PackedScene" uid="uid://4gml1rcsjr4c" path="res://characters/snake/SnakeHead.tscn" id="1_0v881"]
+[ext_resource type="Script" uid="uid://dyji7iq64n86d" path="res://tests/test_snake.gd" id="1_5gi7p"]
 [ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="1_s81pc"]
+[ext_resource type="PackedScene" uid="uid://cfw80erppaihc" path="res://characters/snake/Fruit.tscn" id="3_5gi7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s81pc"]
 size = Vector2(106, 242)
@@ -9,19 +10,11 @@ size = Vector2(106, 242)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0v881"]
 size = Vector2(96, 240)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gi7p"]
+size = Vector2(224, 52)
+
 [node name="TestSnake" type="Node2D" unique_id=1760337068]
-
-[node name="SnakeHead" parent="." unique_id=176474361 node_paths=PackedStringArray("parent") instance=ExtResource("1_0v881")]
-position = Vector2(4, 0)
-parent = NodePath("..")
-
-[node name="SnakeHead2" type="Node2D" parent="." unique_id=2139229166]
-
-[node name="ColorRect" type="ColorRect" parent="SnakeHead2" unique_id=463171253]
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 2.0
-offset_bottom = 2.0
+script = ExtResource("1_5gi7p")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=280586220]
 zoom = Vector2(3, 3)
@@ -31,7 +24,7 @@ zoom = Vector2(3, 3)
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1538561966]
 offset_left = -192.0
 offset_top = -112.0
-offset_right = -96.0
+offset_right = -94.0
 offset_bottom = 112.0
 color = Color(0, 0, 0, 1)
 
@@ -42,14 +35,114 @@ position = Vector2(43, 111)
 shape = SubResource("RectangleShape2D_s81pc")
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=2017451392]
-offset_left = 96.0
+offset_left = 94.0
 offset_top = -112.0
 offset_right = 192.0
 offset_bottom = 112.0
 color = Color(0, 0, 0, 1)
 
 [node name="Area2D" type="Area2D" parent="ColorRect2" unique_id=519826367]
+position = Vector2(2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/Area2D" unique_id=654436031]
 position = Vector2(48, 112)
 shape = SubResource("RectangleShape2D_0v881")
+
+[node name="GameUI" type="CanvasLayer" parent="." unique_id=1088250025]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="Label" type="Label" parent="GameUI" unique_id=517549929]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 68.0
+offset_bottom = 31.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 50
+text = "SNAKES"
+
+[node name="Label2" type="Label" parent="GameUI" unique_id=1074344576]
+offset_left = 304.0
+offset_right = 364.0
+offset_bottom = 23.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 50
+text = "SNAKES"
+
+[node name="Label3" type="Label" parent="GameUI" unique_id=358219295]
+offset_left = 16.0
+offset_top = 184.0
+offset_right = 76.0
+offset_bottom = 207.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 50
+text = "SNAKES"
+
+[node name="Label4" type="Label" parent="GameUI" unique_id=1583583548]
+offset_left = 304.0
+offset_top = 184.0
+offset_right = 372.0
+offset_bottom = 207.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 50
+text = "SNAKES?"
+
+[node name="Score" type="Label" parent="GameUI" unique_id=1710318937]
+offset_left = 296.0
+offset_top = 72.0
+offset_right = 376.0
+offset_bottom = 95.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 50
+text = "SCORE: 0"
+
+[node name="Position" type="Label" parent="GameUI" unique_id=537528328]
+offset_left = 297.33334
+offset_top = 94.333336
+offset_right = 511.33334
+offset_bottom = 163.33334
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 50
+text = "SCORE: 0"
+
+[node name="Fruit" parent="." unique_id=176474361 instance=ExtResource("3_5gi7p")]
+position = Vector2(24, -11)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1507879342]
+offset_left = -111.0
+offset_top = 106.0
+offset_right = 112.0
+offset_bottom = 331.0
+color = Color(0, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="ColorRect4" unique_id=646673223]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect4/Area2D" unique_id=755588529]
+position = Vector2(48, 112)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1248058282]
+offset_left = -113.0
+offset_top = -332.0
+offset_right = 110.0
+offset_bottom = -106.0
+color = Color(0, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="ColorRect3" unique_id=496928923]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect3/Area2D" unique_id=1537105697]
+position = Vector2(48, 112)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1361357302]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1163448874]
+position = Vector2(0, 134)
+shape = SubResource("RectangleShape2D_5gi7p")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=729646091]
+position = Vector2(-2, -269)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1534330564]
+position = Vector2(0, 134)
+shape = SubResource("RectangleShape2D_5gi7p")

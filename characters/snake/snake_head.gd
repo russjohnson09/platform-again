@@ -1,9 +1,13 @@
 extends Node2D
 
 
+signal death
+
 #@export var parent: PackedScene;
 
-@export var parent: Node2D
+#@export var parent: Node2D
+
+@onready var parent = get_parent()
 
 @export var movement_time = 0.1
 #@export var movement_time = 0.5
@@ -61,6 +65,8 @@ func handle_grow():
 	#sprite2d = Sprite2D.new() # Create a new Sprite2D.
 	#add_child(sprite2d) # Add it as a child of this node.
 	var instance = tail_scene.instantiate()
+	
+	#print("handle_grow", grow_tail_at)
 	instance.position = grow_tail_at
 #	https://docs.godotengine.org/en/stable/tutorials/scripting/nodes_and_scene_instances.html
 	
@@ -68,11 +74,17 @@ func handle_grow():
 	tail = instance
 	
 	body_parts.append(tail)
+
+
+func do_grow() -> void:
+	grow_tail = true
+	grow_tail_at = position_integer
 	
 func handle_grow_input() -> void:
 	
 	if Input.is_action_just_pressed(input_prefix + "grow"):
-		grow_tail = true
+		#grow_tail = true
+		do_grow()
 	
 	pass
 
@@ -134,6 +146,13 @@ func _physics_process(delta: float) -> void:
 	handle_grow()
 
 
+func _exit_tree() -> void:
+#Called when the node is about to leave the SceneTree (e.g. upon freeing, scene changing, or after calling remove_child() in a script). If the node has children, its _exit_tree() callback will be called last, after all its children have left the tree.
+	
+	for body_part: Node2D in body_parts:
+		body_part.queue_free()
+	pass
+
 func _on_timer_timeout() -> void:
 	grow_tail = true
 	grow_tail_at = position_integer
@@ -141,3 +160,17 @@ func _on_timer_timeout() -> void:
 	for body in body_parts:
 		grow_tail_at = body.position
 		print(grow_tail_at)
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	
+	if area.is_in_group('body'):
+		print("collided with self")
+		emit_signal("death")
+	elif area.is_in_group("fruit"):
+		do_grow()
+	else:
+		emit_signal("death")
+
+		
+	pass # Replace with function body.

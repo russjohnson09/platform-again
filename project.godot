@@ -35,6 +35,11 @@ window/stretch/aspect="keep_width"
 
 enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/direct_audio_and_wav_24bits/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg")
 
+[global_group]
+
+body=""
+fruit=""
+
 [input]
 
 p1_right={
