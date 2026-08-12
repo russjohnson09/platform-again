@@ -10,9 +10,9 @@ offset_left = -2.0
 offset_top = -2.0
 offset_right = 2.0
 offset_bottom = 2.0
+color = Color(0, 0.5737761, 0.15540475, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=1194795142]
 wait_time = 0.2
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

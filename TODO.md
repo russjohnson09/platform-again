@@ -54,3 +54,17 @@ https://www.reddit.com/r/godot/comments/vpa15i/just_a_little_win_today_i_got_a_r
 
 
 https://docs.godotengine.org/en/stable/classes/class_object.html#class-object-method-call
+
+https://github.com/godotengine/godot/issues/115311#issuecomment-3792608946
+
+
+```
+func check():
+	for limit in 10000:
+		recursive(limit)
+		print(limit)
+
+func recursive(limit, i=0):
+	if i < limit:
+		recursive(limit, i+1)
+```
