@@ -40,3 +40,17 @@ if movement_float >= 0.33.
 
 
 position should preferablly be whole ints. The collision will be a smaller circle inside the rect image placeholder.
+
+
+# Snake Game
+I ran into a stack overflow and fixed it by removing the recursive call but I think this could have been fixed with call_deferred
+
+https://forum.godotengine.org/t/what-is-the-difference-between-queue-free-and-call-deferred-queue-free/56643
+
+https://www.reddit.com/r/godot/comments/17yvwnp/in_which_cases_do_you_use_call_deferred/
+
+
+https://www.reddit.com/r/godot/comments/vpa15i/just_a_little_win_today_i_got_a_recursive/
+
+
+https://docs.godotengine.org/en/stable/classes/class_object.html#class-object-method-call
