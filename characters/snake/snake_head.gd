@@ -3,10 +3,6 @@ extends Node2D
 
 signal death
 
-#@export var parent: PackedScene;
-
-#@export var parent: Node2D
-
 @onready var parent = get_parent()
 
 @export var movement_time = 0.1
@@ -82,7 +78,8 @@ func do_grow() -> void:
 	
 func handle_grow_input() -> void:
 	
-	if Input.is_action_just_pressed(input_prefix + "grow"):
+	#if Input.is_action_just_pressed(input_prefix + "grow"):
+	if Input.is_action_pressed(input_prefix + "grow"):
 		#grow_tail = true
 		do_grow()
 	
