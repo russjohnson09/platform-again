@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://q81xp5siifh6" path="res://characters/snake/snake_body.gd" id="1_y76ra"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y76ra"]
+size = Vector2(2, 2)
+
 [node name="SnakeBody" type="Node2D" unique_id=627295454]
 script = ExtResource("1_y76ra")
 
@@ -10,3 +13,9 @@ offset_left = -2.0
 offset_top = -2.0
 offset_right = 2.0
 offset_bottom = 2.0
+color = Color(0.1126328, 0.311805, 2.4065375e-07, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=96417678 groups=["body"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1270147951]
+shape = SubResource("RectangleShape2D_y76ra")

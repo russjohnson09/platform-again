@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c6ypio6a8yln8"]
+
+[ext_resource type="Script" uid="uid://8q6q85h4b1y3" path="res://tests/test_recursion.gd" id="1_slpb7"]
+
+[node name="TestRecursion" type="Node2D" unique_id=2089603177]
+script = ExtResource("1_slpb7")
+
+[node name="Label" type="Label" parent="." unique_id=154238116]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "123"
+
+[node name="Button" type="Button" parent="." unique_id=1653715465]
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 104.0
+offset_bottom = 79.0
+text = "Test"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
