@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dyji7iq64n86d" path="res://tests/test_snake.gd" id="1_5gi7p"]
 [ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="1_s81pc"]
-[ext_resource type="PackedScene" uid="uid://cfw80erppaihc" path="res://characters/snake/Fruit.tscn" id="3_5gi7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s81pc"]
 size = Vector2(106, 242)
@@ -105,9 +104,6 @@ scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 50
 text = "SCORE: 0"
 
-[node name="Fruit" parent="." unique_id=176474361 instance=ExtResource("3_5gi7p")]
-position = Vector2(24, -11)
-
 [node name="ColorRect4" type="ColorRect" parent="." unique_id=1507879342]
 offset_left = -111.0
 offset_top = 106.0
@@ -146,3 +142,11 @@ position = Vector2(-2, -269)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1534330564]
 position = Vector2(0, 134)
 shape = SubResource("RectangleShape2D_5gi7p")
+
+[node name="FruitSpawnArea" type="Node2D" parent="." unique_id=466759856]
+
+[node name="TopLeft" type="Node2D" parent="FruitSpawnArea" unique_id=1552412774]
+position = Vector2(-92, -104)
+
+[node name="BottomRight" type="Node2D" parent="FruitSpawnArea" unique_id=26364896]
+position = Vector2(92, 104)

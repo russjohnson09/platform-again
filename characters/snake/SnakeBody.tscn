@@ -15,7 +15,7 @@ offset_right = 2.0
 offset_bottom = 2.0
 color = Color(0.1126328, 0.311805, 2.4065375e-07, 1)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=96417678 groups=["body"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=96417678 groups=["tail"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1270147951]
 shape = SubResource("RectangleShape2D_y76ra")
