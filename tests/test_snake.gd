@@ -15,7 +15,27 @@ var fruit_scene = preload("res://characters/snake/Fruit.tscn")
 
 #var snake: Node2D
 var snake
-var fruit
+#var fruit
+var fruits = [
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+]
 
 @onready var snake_head_spawn_point = $"."
 
@@ -39,7 +59,7 @@ func get_fruit_position():
 	
 	var total_positions = (width * height) + (width - 1)
 	
-	total_positions = 10
+	#total_positions = 10
 	
 	var rand_position = rng.randi_range(0, total_positions)
 	
@@ -49,8 +69,7 @@ func get_fruit_position():
 	#rand_position = 46
 	#rand_position = 2392
 	#rand_position += 45
-	##rand_position = 2395
-	#
+	#rand_position = 2395
 	#rand_position = 46
 	
 	#var right_bottom_corner =  2444 + 46
@@ -73,21 +92,25 @@ func get_fruit_position():
 	# randomize
 	return new_position
 
-func spawn_fruit() -> void:
+func spawn_fruit(fruit):
 	if fruit and is_instance_valid(fruit):
-		return
+		return fruit
 	
-	fruit = fruit_scene.instantiate()
-	fruit.position = get_fruit_position()
+	var new_fruit = fruit_scene.instantiate()
+	new_fruit.position = get_fruit_position()
 	#instance.position = Vector2i(0,0)
-	add_child(fruit)
+	add_child(new_fruit)
 	#print(fruit.get_overlapping_areas())
 
-	pass
+	return new_fruit
 
 func _process(delta: float) -> void:
-	
-	spawn_fruit()
+	var idx = 0
+	while idx < len(fruits):
+		fruits[idx] = spawn_fruit(fruits[idx])
+		idx += 1
+	#for fruit in len(fruits):
+		#spawn_fruit()
 	
 	if snake and is_instance_valid(snake):
 		#print(snake)
