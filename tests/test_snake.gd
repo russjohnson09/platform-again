@@ -148,6 +148,10 @@ func create_snake_head() -> void:
 	
 
 func _ready() -> void:
+	DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
+	DebugMenu.style = DebugMenu.Style.HIDDEN
+	DebugMenu.style = DebugMenu.Style.VISIBLE_COMPACT
+
 	var seed_int := hash(seed)
 	#seed_int = "123"
 	rng.seed = seed_int

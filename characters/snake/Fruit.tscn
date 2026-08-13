@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cl2yesmamwlgq" path="res://characters/snake/fruit.gd" id="1_6a4ku"]
 [ext_resource type="Script" uid="uid://bhvwqpepwsat7" path="res://characters/snake/fruit_area_2d.gd" id="1_h2b4y"]
+[ext_resource type="Texture2D" uid="uid://cjl0gp3sgmlqw" path="res://assets/russ_art/snake.png" id="3_avdco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ydsq"]
 size = Vector2(2, 2)
@@ -14,12 +15,18 @@ offset_left = -2.0
 offset_top = -2.0
 offset_right = 2.0
 offset_bottom = 2.0
-color = Color(0.8587242, 0, 0.40739188, 1)
+color = Color(0, 0.4890539, 0.71054786, 1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1637936258 groups=["fruit"]]
 script = ExtResource("1_h2b4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=561132771]
+visible = false
 shape = SubResource("RectangleShape2D_2ydsq")
+
+[node name="Snake" type="Sprite2D" parent="." unique_id=1410242984]
+position = Vector2(4.7683716e-07, 0)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_avdco")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

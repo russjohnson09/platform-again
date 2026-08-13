@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0v8kmjvrelj6"]
 
 [ext_resource type="Script" uid="uid://dyji7iq64n86d" path="res://tests/test_snake.gd" id="1_5gi7p"]
-[ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="1_s81pc"]
+[ext_resource type="Texture2D" uid="uid://cjl0gp3sgmlqw" path="res://assets/russ_art/snake.png" id="3_5gi7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s81pc"]
 size = Vector2(106, 242)
@@ -18,8 +18,6 @@ script = ExtResource("1_5gi7p")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=280586220]
 zoom = Vector2(3, 3)
 
-[node name="Controls" parent="." unique_id=1212252444 instance=ExtResource("1_s81pc")]
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1538561966]
 offset_left = -192.0
 offset_top = -112.0
@@ -28,6 +26,7 @@ offset_bottom = 112.0
 color = Color(0, 0, 0, 1)
 
 [node name="Area2D" type="Area2D" parent="ColorRect" unique_id=469066916]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Area2D" unique_id=1315978925]
 position = Vector2(43, 111)
@@ -41,6 +40,7 @@ offset_bottom = 112.0
 color = Color(0, 0, 0, 1)
 
 [node name="Area2D" type="Area2D" parent="ColorRect2" unique_id=519826367]
+visible = false
 position = Vector2(2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/Area2D" unique_id=654436031]
@@ -112,6 +112,7 @@ offset_bottom = 331.0
 color = Color(0, 0, 0, 1)
 
 [node name="Area2D" type="Area2D" parent="ColorRect4" unique_id=646673223]
+visible = false
 position = Vector2(2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect4/Area2D" unique_id=755588529]
@@ -125,14 +126,17 @@ offset_bottom = -106.0
 color = Color(0, 0, 0, 1)
 
 [node name="Area2D" type="Area2D" parent="ColorRect3" unique_id=496928923]
+visible = false
 position = Vector2(2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect3/Area2D" unique_id=1537105697]
+visible = false
 position = Vector2(48, 112)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1361357302]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1163448874]
+visible = false
 position = Vector2(0, 134)
 shape = SubResource("RectangleShape2D_5gi7p")
 
@@ -140,6 +144,7 @@ shape = SubResource("RectangleShape2D_5gi7p")
 position = Vector2(-2, -269)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1534330564]
+visible = false
 position = Vector2(0, 134)
 shape = SubResource("RectangleShape2D_5gi7p")
 
@@ -150,3 +155,17 @@ position = Vector2(-92, -104)
 
 [node name="BottomRight" type="Node2D" parent="FruitSpawnArea" unique_id=26364896]
 position = Vector2(92, 104)
+
+[node name="Snake" type="Sprite2D" parent="." unique_id=462901758]
+position = Vector2(-138, -39)
+texture = ExtResource("3_5gi7p")
+
+[node name="Snake2" type="Sprite2D" parent="." unique_id=604005882]
+position = Vector2(-146, 31)
+rotation = -0.4886922
+texture = ExtResource("3_5gi7p")
+
+[node name="Snake3" type="Sprite2D" parent="." unique_id=1193736738]
+position = Vector2(146, -53)
+rotation = 1.7366027
+texture = ExtResource("3_5gi7p")
