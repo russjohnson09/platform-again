@@ -165,6 +165,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		print("collided with self")
 		emit_signal("death")
 	elif area.is_in_group("fruit"):
+		area.queue_free()
 		do_grow()
 	else:
 		emit_signal("death")

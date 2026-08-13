@@ -15,7 +15,36 @@ offset_right = 2.0
 offset_bottom = 2.0
 color = Color(0.1126328, 0.311805, 2.4065375e-07, 1)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=96417678 groups=["body"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=96417678 groups=["body", "tail"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1270147951]
+visible = false
 shape = SubResource("RectangleShape2D_y76ra")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=166444970]
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -1.0
+color = Color(0, 0.23921569, 0.56078434, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1662858014]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 2.0
+color = Color(0, 0.23921569, 0.56078434, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1152995095]
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = 1.0
+color = Color(0, 0.23921569, 0.56078434, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=598061853]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 1.0
+color = Color(0, 0.23921569, 0.56078434, 1)
