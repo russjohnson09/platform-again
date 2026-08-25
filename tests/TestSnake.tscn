@@ -168,7 +168,7 @@ position = Vector2(-138, -39)
 texture = ExtResource("3_5gi7p")
 
 [node name="Snake2" type="Sprite2D" parent="." unique_id=604005882]
-position = Vector2(-146, 31)
+position = Vector2(-160, -87.000015)
 rotation = -0.48869222
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("3_5gi7p")
@@ -185,3 +185,27 @@ transform = Transform2D(0.75, 0, 0, 0.75, 0, 100)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=280586220]
 zoom = Vector2(3, 3)
+
+[node name="SNAKE CAM" type="Label" parent="." unique_id=2040767391]
+offset_left = 118.0
+offset_top = 3.9999998
+offset_right = 402.0
+offset_bottom = 73.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 50
+text = "SNAKE CAM"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1580925766]
+offset_left = 108.0
+offset_top = 22.0
+offset_right = 620.0
+offset_bottom = 534.0
+scale = Vector2(0.15, 0.15)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1792220903]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport" unique_id=1193237172]
+position = Vector2(-1600, -852)
+zoom = Vector2(20, 20)

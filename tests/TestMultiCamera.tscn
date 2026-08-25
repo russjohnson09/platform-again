@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bl1nuo3y0hsn4"]
+
+[ext_resource type="Texture2D" uid="uid://cjl0gp3sgmlqw" path="res://assets/russ_art/snake.png" id="1_em20p"]
+[ext_resource type="Script" uid="uid://ccljilupp1cxx" path="res://tests/test_multi_camera.gd" id="1_ygqgo"]
+
+[node name="TestMultiCamera" type="Node2D" unique_id=823521703]
+script = ExtResource("1_ygqgo")
+
+[node name="Snake" type="Sprite2D" parent="." unique_id=120420597]
+position = Vector2(181, 91)
+texture = ExtResource("1_em20p")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1536459129]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2127598152]
+offset_left = 431.0
+offset_top = 189.0
+offset_right = 598.0
+offset_bottom = 331.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=384708493]
+offset_left = 446.0
+offset_top = 193.0
+offset_right = 1246.0
+offset_bottom = 993.0
+scale = Vector2(0.25, 0.25)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=579983541]
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport" unique_id=1465763358]
+zoom = Vector2(2, 2)

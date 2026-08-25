@@ -119,6 +119,9 @@ func _process(delta: float) -> void:
 		
 		$GameUI/Score.text = "SCORE: " + str(len(snake.body_parts))
 		$GameUI/Position.text = "" + str(Vector2i(snake.position))
+		
+		
+		$SubViewportContainer/SubViewport/Camera2D.position = snake.position
 
 
 func snake_death() -> void:
@@ -167,9 +170,11 @@ func _ready() -> void:
 	#tail = instance
 	#
 	#body_parts.append(tail)
+	
+	
+	$SubViewportContainer/SubViewport.world_2d = get_viewport().world_2d
+
 	pass
-
-
 
 #https://forum.godotengine.org/t/canvaslayer-and-a-2d-camera-with-8x-zoom/126226
 #https://docs.godotengine.org/en/stable/classes/class_subviewport.html
