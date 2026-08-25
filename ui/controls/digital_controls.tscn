@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://6c1mldwgruc0"]
+
+[ext_resource type="Script" uid="uid://dsqqoio2eh2jn" path="res://ui/controls/digital_controls.gd" id="1_k8bgv"]
+[ext_resource type="Texture2D" uid="uid://wa4bkavqbnb7" path="res://assets/Diner Dash 3 - Flo on the Go/assets/buttons/arrowup_a.png" id="2_aipuq"]
+[ext_resource type="Texture2D" uid="uid://baj27ut4ia3ln" path="res://assets/Diner Dash 3 - Flo on the Go/assets/buttons/arrowup_b.png" id="3_4yxtq"]
+[ext_resource type="Texture2D" uid="uid://br51wfmem83aq" path="res://assets/Diner Dash 3 - Flo on the Go/assets/buttons/arrowdown_a.png" id="4_iscwh"]
+[ext_resource type="Texture2D" uid="uid://cy0qedefv0w4j" path="res://assets/Diner Dash 3 - Flo on the Go/assets/buttons/right_arrow_a.png" id="5_6mteg"]
+[ext_resource type="Texture2D" uid="uid://brphfixfoe6xt" path="res://assets/Diner Dash 3 - Flo on the Go/assets/buttons/arrowdown_b.png" id="5_isdgu"]
+[ext_resource type="Texture2D" uid="uid://k4dl3bit0bny" path="res://assets/Diner Dash 3 - Flo on the Go/assets/buttons/right_arrow_b.png" id="6_mnymk"]
+[ext_resource type="Texture2D" uid="uid://06rgin8ou5ql" path="res://assets/Diner Dash 3 - Flo on the Go/assets/buttons/left_arrow_a.png" id="7_isdgu"]
+[ext_resource type="Texture2D" uid="uid://b542ch2r1cpdh" path="res://assets/Diner Dash 3 - Flo on the Go/assets/buttons/left_arrow_b.png" id="8_hs5b0"]
+[ext_resource type="Texture2D" uid="uid://w8s8scwj7xwd" path="res://assets/Diner Dash 3 - Flo on the Go/assets/map/dot_on_b.png" id="9_6mteg"]
+[ext_resource type="Texture2D" uid="uid://eiawd52f5mky" path="res://assets/Diner Dash 3 - Flo on the Go/assets/map/dot_off_b.png" id="10_mnymk"]
+
+[node name="DigitalControls" type="CanvasLayer" unique_id=831976203]
+script = ExtResource("1_k8bgv")
+
+[node name="UpBtn" type="TouchScreenButton" parent="." unique_id=1589637577]
+position = Vector2(82, 312)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_aipuq")
+texture_pressed = ExtResource("3_4yxtq")
+
+[node name="DownBtn" type="TouchScreenButton" parent="." unique_id=525518225]
+position = Vector2(84, 528)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_iscwh")
+texture_pressed = ExtResource("5_isdgu")
+
+[node name="RightBtn" type="TouchScreenButton" parent="." unique_id=865878130]
+position = Vector2(199, 424)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_6mteg")
+texture_pressed = ExtResource("6_mnymk")
+
+[node name="LeftBtn" type="TouchScreenButton" parent="." unique_id=2047466794]
+position = Vector2(-11, 422)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_isdgu")
+texture_pressed = ExtResource("8_hs5b0")
+
+[node name="SelectBtn" type="TouchScreenButton" parent="." unique_id=620478647]
+position = Vector2(106, 432)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("9_6mteg")
+texture_pressed = ExtResource("10_mnymk")
+
+[connection signal="pressed" from="UpBtn" to="." method="_on_up_btn_pressed"]
+[connection signal="released" from="UpBtn" to="." method="_on_up_btn_released"]
+[connection signal="pressed" from="DownBtn" to="." method="_on_down_btn_pressed"]
+[connection signal="released" from="DownBtn" to="." method="_on_down_btn_released"]
+[connection signal="pressed" from="RightBtn" to="." method="_on_right_btn_pressed"]
+[connection signal="released" from="RightBtn" to="." method="_on_right_btn_released"]
+[connection signal="pressed" from="LeftBtn" to="." method="_on_left_btn_pressed"]
+[connection signal="released" from="LeftBtn" to="." method="_on_left_btn_released"]

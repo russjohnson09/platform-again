@@ -119,6 +119,9 @@ func _process(delta: float) -> void:
 		
 		$GameUI/Score.text = "SCORE: " + str(len(snake.body_parts))
 		$GameUI/Position.text = "" + str(Vector2i(snake.position))
+		
+		
+		$SubViewportContainer/SubViewport/Camera2D.position = snake.position
 
 
 func snake_death() -> void:
@@ -167,4 +170,21 @@ func _ready() -> void:
 	#tail = instance
 	#
 	#body_parts.append(tail)
+	
+	
+	$SubViewportContainer/SubViewport.world_2d = get_viewport().world_2d
+
 	pass
+
+#https://forum.godotengine.org/t/canvaslayer-and-a-2d-camera-with-8x-zoom/126226
+#https://docs.godotengine.org/en/stable/classes/class_subviewport.html
+#https://docs.godotengine.org/en/stable/tutorials/rendering/viewports.html
+
+
+#https://forum.godotengine.org/t/multiple-camera-from-different-angles-on-one-scene-at-the-same-time/22452/2
+
+
+#https://forum.godotengine.org/t/can-you-overlay-multiple-cameras-in-godot/92350/3
+
+
+#https://www.reddit.com/r/godot/comments/1cr0wkk/how_can_i_have_two_cameras_in_the_same_2d_scene/
