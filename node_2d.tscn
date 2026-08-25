@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Script" uid="uid://dwl3koja4hqs5" path="res://node_2d.gd" id="1_0e48y"]
+[ext_resource type="PackedScene" uid="uid://b4y7nokfiuluh" path="res://addons/SAVDebugConsole/scenes/SAVDebugConsole.tscn" id="2_0e48y"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wtcfe"]
 size = Vector2(100, 50)
@@ -113,6 +114,11 @@ offset_left = 472.0
 offset_top = 176.0
 offset_right = 544.0
 offset_bottom = 208.0
+
+[node name="SAVDebugConsole" parent="." unique_id=209324023 instance=ExtResource("2_0e48y")]
+offset = Vector2(500, 250)
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 500, 250)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
