@@ -75,6 +75,45 @@ offset_bottom = 32.0
 text = "SNAKE"
 metadata/_edit_use_anchors_ = true
 
+[node name="Permissions" type="Label" parent="." unique_id=726057846]
+offset_left = 408.0
+offset_top = 288.0
+offset_right = 444.66666
+offset_bottom = 311.0
+text = "X3"
+
+[node name="Vibrate" type="TouchScreenButton" parent="." unique_id=429612295]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(72, 392)
+texture_normal = SubResource("PlaceholderTexture2D_wtcfe")
+
+[node name="Label" type="Label" parent="Vibrate" unique_id=74128668]
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 81.0
+offset_bottom = 32.0
+text = "Vibrate"
+metadata/_edit_use_anchors_ = true
+
+[node name="Vibrate2" type="TouchScreenButton" parent="." unique_id=169200450]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(368, 72)
+texture_normal = SubResource("PlaceholderTexture2D_wtcfe")
+
+[node name="Label" type="Label" parent="Vibrate2" unique_id=1349534153]
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 81.0
+offset_bottom = 32.0
+text = "Vibrate"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1591714833]
+offset_left = 472.0
+offset_top = 176.0
+offset_right = 544.0
+offset_bottom = 208.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
@@ -83,3 +122,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
 [connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
+[connection signal="pressed" from="Vibrate" to="." method="_on_vibrate_pressed"]
+[connection signal="pressed" from="Vibrate2" to="." method="_on_vibrate_2_pressed"]

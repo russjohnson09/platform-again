@@ -4,6 +4,15 @@ extends Node2D
 
 func _ready() -> void:
 	DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
+	
+	print(OS.get_granted_permissions())
+	print("can record audio", OS.request_permission("RECORD_AUDIO"))
+	print("can vibrate", OS.request_permission("VIBRATE"))
+	
+	
+	$Permissions.text = "Permissions: " + str(OS.get_granted_permissions()) + "\n"
+	$Permissions.text += "\nVibrate: " + str(OS.request_permission("VIBRATE"))
+	$Permissions.text += "\nFOO: " + str(OS.request_permission("FOO"))
 
 
 func _on_button_2_pressed() -> void:
@@ -55,3 +64,18 @@ func _on_touch_screen_button_pressed() -> void:
 
 func _on_touch_screen_button_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://tests/TestSnake.tscn")
+
+
+func _on_vibrate_pressed() -> void:
+	print("start")
+	Input.vibrate_handheld()
+	pass # Replace with function body.
+
+
+func _on_vibrate_2_pressed() -> void:
+	var vibrate_time = int($TextEdit.text)
+	print(vibrate_time)
+	Input.vibrate_handheld(vibrate_time)
+	print(vibrate_time)
+
+	pass # Replace with function body.
