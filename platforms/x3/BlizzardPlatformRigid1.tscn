@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bip5osk8yntlf"]
+
+[ext_resource type="Texture2D" uid="uid://nund77ehycd6" path="res://assets/x3/tilesets/blizzard_buffalo_tileset.png" id="1_5ujks"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ujks"]
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsly4"]
+size = Vector2(128, 16)
+
+[node name="BlizzardPlatformRigid1" type="RigidBody2D" unique_id=1706428340]
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_5ujks")
+
+[node name="BlizzardBuffaloTileset" type="Sprite2D" parent="." unique_id=112877437]
+texture = ExtResource("1_5ujks")
+region_enabled = true
+region_rect = Rect2(802, 734, 128, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1490133361]
+shape = SubResource("RectangleShape2D_tsly4")

@@ -1,13 +1,8 @@
 extends Node2D
 
 
-#func _process(delta: float) -> void:
-	#
-	#$Node2D/velocity.text = str($Node2D/BlizzardPlatform1.velocity)
-	#
-	#pass
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	print(body)
 	
 	if not $AnimationPlayer.is_playing():
 		$AnimationPlayer.play("new_animation")

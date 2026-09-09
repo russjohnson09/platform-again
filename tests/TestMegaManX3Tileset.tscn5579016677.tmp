@@ -573,44 +573,6 @@ _data = {
 &"new_animation": SubResource("Animation_t4rdv")
 }
 
-[sub_resource type="Animation" id="Animation_ochml"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2184, 230)]
-}
-
-[sub_resource type="Animation" id="Animation_uoh3q"]
-resource_name = "new_animation"
-length = 5.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2184, 230), Vector2(3279, 230)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_spiwm"]
-_data = {
-&"RESET": SubResource("Animation_ochml"),
-&"new_animation": SubResource("Animation_uoh3q")
-}
-
 [node name="TestMegaManX3Tileset" type="Node2D" unique_id=1578362182]
 script = ExtResource("1_t4rdv")
 
@@ -633,10 +595,10 @@ tile_map_data = PackedByteArray("AAAAAAwAAQABAB4AAAABAAwAAQACAB4AAAACAAwAAQABAB4
 tile_set = SubResource("TileSet_1kjqk")
 
 [node name="CharacterBody2D" parent="." unique_id=546696943 instance=ExtResource("3_vpiw7")]
-position = Vector2(1872, 233)
+position = Vector2(2235, 169)
 
 [node name="Kai" parent="." unique_id=621718200 instance=ExtResource("4_1kjqk")]
-position = Vector2(2178, 146)
+position = Vector2(2132, 138)
 scale = Vector2(2, 2)
 JUMP_SPEED = 600
 WALK_MAX_SPEED = 11111
@@ -680,9 +642,6 @@ autostart = true
 
 [node name="BlizzardPlatform2" parent="." unique_id=1667189604 instance=ExtResource("5_48f0s")]
 position = Vector2(2184, 230)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BlizzardPlatform2" unique_id=1807983878]
-libraries/ = SubResource("AnimationLibrary_spiwm")
 
 [connection signal="player_out_of_bounds" from="Kai" to="." method="_on_kai_player_out_of_bounds"]
 [connection signal="visibility_changed" from="Kai" to="." method="_on_kai_visibility_changed"]

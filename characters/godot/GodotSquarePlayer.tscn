@@ -7,6 +7,13 @@
 size = Vector2(16, 16)
 
 [node name="GodotSquarePlayer" type="CharacterBody2D" unique_id=546696943]
+process_priority = 2
+process_physics_priority = 2
+slide_on_ceiling = false
+floor_constant_speed = true
+floor_snap_length = 5.0
+platform_on_leave = 2
+safe_margin = 1.0
 script = ExtResource("1_vrr6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2004051370]

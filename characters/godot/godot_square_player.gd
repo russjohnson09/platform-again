@@ -4,6 +4,7 @@ const WALK_FORCE = 600
 const WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
 @export var JUMP_SPEED := 200 * 2
+@export var test_idle := true
 
 const PUSH_FORCE = 80.0
 
@@ -34,6 +35,19 @@ func get_walk_dir() -> float:
 	return Input.get_axis(left,right)
 
 func _physics_process(delta: float) -> void:
+#	https://github.com/godotengine/godot/issues/66304#issuecomment-2275021997
+	#The nodes are both calling move_and_slide() inside of _physics_process, and I have ensured they're executing in the order: 1. Platform, 2. Character, via process priority values (confirmed via logging). If I log what the player thinks its attached platform velocity is (get_platform_velocity() on the player character, after it has done its move_and_slide()), the value reported is the speed the platform was moving the previous frame.
+	
+	
+	#_physics_process
+	
+	
+	# Vertical movement code. Apply gravity.
+	velocity.y += gravity * delta
+	
+	if test_idle:
+		move_and_slide()
+		return
 #	https://www.reddit.com/r/godot/comments/11m8rtk/what_does_the_colon_sign_mean_in_the_variable/
 # Use : for explicity typing. Raise type errors early and often
 	var walk_dir := get_walk_dir()
@@ -51,8 +65,7 @@ func _physics_process(delta: float) -> void:
 	# Clamp to the maximum horizontal movement speed.
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 
-	# Vertical movement code. Apply gravity.
-	velocity.y += gravity * delta
+
 
 	# Move based on the velocity and snap to the ground.
 	# TODO: This information should be set to the CharacterBody properties instead of arguments: snap, Vector2.DOWN, Vector2.UP

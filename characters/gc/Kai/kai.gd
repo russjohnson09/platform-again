@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 
+#https://kidscancode.org/godot_recipes/4.x/2d/moving_platforms/
+
 signal player_out_of_bounds
 #const WALK_FORCE = 600
 #const WALK_MAX_SPEED = 400
@@ -59,6 +61,8 @@ func update_image(walk_dir: float):
 		animation.flip_h = false
 
 func _physics_process(delta: float) -> void:
+	$velocity.text = str(velocity) + "\n"
+
 #	https://www.reddit.com/r/godot/comments/11m8rtk/what_does_the_colon_sign_mean_in_the_variable/
 # Use : for explicity typing. Raise type errors early and often
 	var walk_dir := get_walk_dir()
@@ -83,19 +87,26 @@ func _physics_process(delta: float) -> void:
 	# Move based on the velocity and snap to the ground.
 	# TODO: This information should be set to the CharacterBody properties instead of arguments: snap, Vector2.DOWN, Vector2.UP
 	# TODO: Rename velocity to linear_velocity in the rest of the script.
-	move_and_slide()
-	
+	var collided = move_and_slide()
+	#var collided = true
+	#move_and_collide()
 	if is_on_floor():
 	#	https://github.com/godotrecipes/character_vs_rigid/blob/master/player.gd#L4
 		for i in get_slide_collision_count():
 			var c = get_slide_collision(i)
-			if c.get_collider() is RigidBody2D:
-				c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE)
-
+			var collider =  c.get_collider()
+			if collider is RigidBody2D:
+				collider.apply_central_impulse(-c.get_normal() * PUSH_FORCE)
+			elif collider is CharacterBody2D:
+				print("Collided with: ", c.get_collider().name, " ", c.get_collider_velocity())
+				#velocity = c.get_collider_velocity()
+				$velocity.text += "\n" + str(c.get_collider_velocity())
 	# Check for jumping. is_on_floor() must be called after movement code.
 	if is_on_floor() and Input.is_action_just_pressed(input_prefix + &"jump"):
 		velocity.y = -JUMP_SPEED
+		
 	
+	$velocity.text += str(velocity) + " " + str(collided) + " " + str(is_on_floor())
 	#if abs(velocity.x) < 0.1:
 		#animation.play("kai_idle_")
 	#else:
