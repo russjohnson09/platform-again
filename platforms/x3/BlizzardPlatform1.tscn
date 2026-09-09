@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsly4"]
 size = Vector2(128, 16)
 
-[node name="BlizzardPlatform1" type="CharacterBody2D" unique_id=1048838655]
+[node name="BlizzardPlatform1" type="AnimatableBody2D" unique_id=1368083516]
 
 [node name="BlizzardBuffaloTileset" type="Sprite2D" parent="." unique_id=112877437]
 texture = ExtResource("1_tsly4")

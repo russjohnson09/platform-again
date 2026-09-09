@@ -8,6 +8,7 @@ func _ready() -> void:
 	$Platform1Animation.play("new_animation", -1, speed)
 	#$Platform1Animation2.play("new_animation", -1, speed)
 
+	$BlizzardPlatform1/AnimationPlayer.play("new_animation")
 
 func _on_kai_player_out_of_bounds() -> void:
 	$Kai.position = $Spawn1.position
