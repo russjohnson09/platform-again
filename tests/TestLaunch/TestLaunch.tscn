@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://b8k0ela5gackl" path="res://tileset/mmx3_tileset.tres" id="2_2fgy4"]
 [ext_resource type="PackedScene" uid="uid://c5qeytfq058y7" path="res://characters/gc/Kai/Kai.tscn" id="3_8r4yd"]
 [ext_resource type="PackedScene" uid="uid://djikgpl1jye8" path="res://platforms/x3/BlizzardPlatform1.tscn" id="4_8r4yd"]
+[ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="5_h1f6d"]
 
 [sub_resource type="Animation" id="Animation_8r4yd"]
 length = 0.001
@@ -139,5 +140,7 @@ collision_mask = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D6/BlizzardPlatform1" unique_id=1811010067]
 libraries/ = SubResource("AnimationLibrary_d7jqp")
+
+[node name="CanvasLayer" parent="." unique_id=1212252444 instance=ExtResource("5_h1f6d")]
 
 [connection signal="player_out_of_bounds" from="Kai" to="." method="_on_kai_player_out_of_bounds"]
