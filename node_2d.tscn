@@ -75,6 +75,20 @@ offset_bottom = 32.0
 text = "SNAKE"
 metadata/_edit_use_anchors_ = true
 
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="." unique_id=390356224]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(48, 384)
+texture_normal = SubResource("PlaceholderTexture2D_wtcfe")
+
+[node name="Label" type="Label" parent="TouchScreenButton3" unique_id=722175074]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 82.0
+offset_bottom = 57.0
+text = "LAUNCH
+"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
@@ -83,3 +97,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
 [connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
+[connection signal="pressed" from="TouchScreenButton3" to="." method="_on_touch_screen_button_3_pressed"]
