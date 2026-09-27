@@ -7,3 +7,9 @@ https://www.gamedevmarket.net/asset/unique-free-tileset-16x16
 
 
 Anything under 100k is easy enough to commit.
+
+
+https://docs.godotengine.org/en/stable/tutorials/2d/using_tilesets.html
+
+
+f for quick rectangle
