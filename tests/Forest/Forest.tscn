@@ -9,6 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://co72b3usl2ndl" path="res://characters/cobra/Cobra.tscn" id="5_wk3y0"]
 [ext_resource type="Texture2D" uid="uid://d3jkqiwdk25je" path="res://assets/tiny_tiny_heroes_animals/animals.png" id="7_vrbgr"]
 [ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="9_3xeio"]
+[ext_resource type="Texture2D" uid="uid://ce62nj3vu7etw" path="res://assets/mobs_creatures/blue_crystal/sprite_00.png" id="10_4yhpi"]
+[ext_resource type="Texture2D" uid="uid://cjqgn68rmbsoo" path="res://assets/mobs_creatures/blue_crystal/sprite_01.png" id="11_vxdhe"]
+[ext_resource type="Texture2D" uid="uid://c575jpptlnsnb" path="res://assets/mobs_creatures/blue_crystal/sprite_02.png" id="12_xiopa"]
+[ext_resource type="Texture2D" uid="uid://bphs4sv8p2o3f" path="res://assets/mobs_creatures/blue_crystal/sprite_03.png" id="13_m8rt6"]
+[ext_resource type="Texture2D" uid="uid://c5t8dpt28yurm" path="res://assets/mobs_creatures/blue_crystal/sprite_04.png" id="14_fijim"]
+[ext_resource type="Texture2D" uid="uid://bfn1i6jr6ky8k" path="res://assets/mobs_creatures/blue_crystal/sprite_05.png" id="15_yubk5"]
+[ext_resource type="Texture2D" uid="uid://ie1xx7rurba6" path="res://assets/mobs_creatures/blue_crystal/sprite_06.png" id="16_v7w5t"]
+[ext_resource type="Texture2D" uid="uid://l2rnu2wlqhw2" path="res://assets/mobs_creatures/blue_crystal/sprite_07.png" id="17_4d16y"]
+[ext_resource type="Texture2D" uid="uid://bhqpqh6fbi4du" path="res://assets/mobs_creatures/blue_crystal/sprite_08.png" id="18_mhaw6"]
+[ext_resource type="Texture2D" uid="uid://bu18u26ctk510" path="res://assets/mobs_creatures/blue_crystal/sprite_09.png" id="19_u5adk"]
+[ext_resource type="Texture2D" uid="uid://b1dvs5tj7j08u" path="res://assets/mobs_creatures/blue_crystal/sprite_10.png" id="20_yymnt"]
+[ext_resource type="Texture2D" uid="uid://bks1i6adr650r" path="res://assets/mobs_creatures/blue_crystal/sprite_11.png" id="21_rl31u"]
+[ext_resource type="Texture2D" uid="uid://dwm6yituiu8hl" path="res://assets/mobs_creatures/blue_crystal/sprite_12.png" id="22_2diil"]
+[ext_resource type="Texture2D" uid="uid://x6c6ejldapir" path="res://assets/mobs_creatures/blue_crystal/sprite_13.png" id="23_xign2"]
+[ext_resource type="Texture2D" uid="uid://dw5hqqrq2gee0" path="res://assets/mobs_creatures/blue_crystal/sprite_14.png" id="24_6hltn"]
+[ext_resource type="Texture2D" uid="uid://cf645t1qncb7q" path="res://assets/mobs_creatures/blue_crystal/sprite_15.png" id="25_qdfxc"]
+[ext_resource type="Texture2D" uid="uid://dqrtfaqw1cg48" path="res://assets/mobs_creatures/blue_crystal/sprite_16.png" id="26_c42k7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrbgr"]
 atlas = ExtResource("7_vrbgr")
@@ -213,6 +230,65 @@ _data = {
 &"new_animation": SubResource("Animation_o4tb4")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_utwkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4yhpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vxdhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xiopa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m8rt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fijim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yubk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v7w5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4d16y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mhaw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_u5adk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yymnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rl31u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2diil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xign2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6hltn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qdfxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_c42k7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Forest" type="Node2D" unique_id=844377012]
 script = ExtResource("1_i0mmu")
 
@@ -387,6 +463,18 @@ texture = ExtResource("7_vrbgr")
 offset = Vector2(0, 500)
 region_enabled = true
 region_rect = Rect2(1, 338, 257, 144)
+
+[node name="Crystal" type="AnimatedSprite2D" parent="." unique_id=1079152910]
+position = Vector2(-1072, -8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_utwkr")
+autoplay = "default"
+
+[node name="Foreground" type="TileMapLayer" parent="." unique_id=208684763]
+z_index = 150
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAC//wMAAAAAAAMAAAC//wQAAAAAAAQAAAC//wUAAAAAAAUAAADA/wMAAAABAAMAAADA/wQAAAABAAQAAADA/wUAAAABAAUAAAC5/wMAAAAAAAMAAAC5/wQAAAAAAAQAAAC5/wUAAAAAAAUAAAC6/wMAAAABAAMAAAC6/wQAAAABAAQAAAC6/wUAAAABAAUAAACy/wMAAAAAAAMAAACy/wQAAAAAAAQAAACy/wUAAAAAAAUAAACz/wMAAAABAAMAAACz/wQAAAABAAQAAACz/wUAAAABAAUAAAC8/wUAAAADAAUAAAC9/wUAAAAEAAUAAAC+/wUAAAAFAAUAAAC6////AAADAAUAAAC7////AAAEAAUAAAC8////AAAFAAUAAAC6/wAAAAADAAUAAAC7/wAAAAAEAAUAAAC8/wAAAAAFAAUAAAC9/wAAAAADAAUAAAC+/wAAAAAEAAUAAAC//wAAAAAFAAUAAAC9////AAADAAUAAAC+////AAAEAAUAAAC/////AAAFAAUAAADc/wAAAAAAAAMAAADc/wEAAAAAAAQAAADc/wIAAAAAAAUAAADd/wAAAAABAAMAAADd/wEAAAABAAQAAADd/wIAAAABAAUAAADY/wAAAAAAAAMAAADY/wEAAAAAAAQAAADY/wIAAAAAAAUAAADZ/wAAAAABAAMAAADZ/wEAAAABAAQAAADZ/wIAAAABAAUAAADe/wIAAAADAAUAAADf/wIAAAAEAAUAAADg/wIAAAAFAAUAAAA=")
+tile_set = ExtResource("5_gktri")
 
 [connection signal="player_out_of_bounds" from="Cobra" to="." method="_on_cobra_player_out_of_bounds"]
 [connection signal="player_out_of_bounds" from="Kai" to="." method="_on_kai_player_out_of_bounds"]
