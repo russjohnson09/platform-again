@@ -1,16 +1,11 @@
 extends CharacterBody2D
 
-
 signal player_out_of_bounds
-#const WALK_FORCE = 600
-#const WALK_MAX_SPEED = 400
-#const STOP_FORCE = 1300
-@export var JUMP_SPEED := 200 * 2
-@export var WALK_FORCE := 800
-@export var WALK_MAX_SPEED := 400
-@export var STOP_FORCE := 1300
 
-@export var enabled := true
+@export var JUMP_SPEED := 120 * 2
+@export var WALK_FORCE := 800
+@export var WALK_MAX_SPEED := 50
+@export var STOP_FORCE := 1300
 
 const PUSH_FORCE = 80.0
 
@@ -24,7 +19,8 @@ const PUSH_FORCE = 80.0
 @export var speed = 100.0
 
 
-@onready var animation = $KaiAnimation
+@onready var animation: AnimatedSprite2D = $Snake1
+@onready var ceiling_raycast: RayCast2D = $RayCast2D
 
 var input_prefix = "p1_"
 
@@ -38,8 +34,6 @@ func set_input_prefix():
 func _ready() -> void:
 	set_input_prefix()
 	
-	animation.play("kai_sprint")
-	
 	
 
 func get_walk_dir() -> float:
@@ -47,30 +41,37 @@ func get_walk_dir() -> float:
 	var right =  (input_prefix + "right")
 	return Input.get_axis(left,right)
 
-
 func update_image(walk_dir: float):
 	
 	if abs(walk_dir) < 0.1:
-		animation.play("kai_idle_")
+		animation.pause()
+		#animation.play("kai_idle_")
 	else:
-		animation.play("kai_sprint")
-		
+		animation.play("default")
+	
+	# TODO crawling on ceiling 
+	# raytrace to see if close enough to ceiling
 	if animation.flip_h == false and walk_dir < 0:
 		animation.flip_h = true
 	elif walk_dir > 0.1:
 		animation.flip_h = false
 
+
+func do_flip():
+	animation.flip_v = not animation.flip_v
+	up_direction = up_direction * -1
+	ceiling_raycast.rotation_degrees += 180
+	
+func reset():
+	if animation.flip_v:
+		do_flip()
+	velocity = Vector2(0,0)
+	
+
 func _physics_process(delta: float) -> void:
-	if not enabled:
-		return
-#	https://www.reddit.com/r/godot/comments/11m8rtk/what_does_the_colon_sign_mean_in_the_variable/
-# Use : for explicity typing. Raise type errors early and often
 	var walk_dir := get_walk_dir()
-	# Horizontal movement code. First, get the player's input.
-	#var walk := WALK_FORCE * walk_dir
 	
 	update_image(walk_dir)
-	#var walk = WALK_FORCE * walk_dir
 	var walk := (WALK_FORCE * walk_dir)
 	# Slow down the player if they're not trying to move.
 	if abs(walk) < WALK_FORCE * 0.2:
@@ -82,38 +83,26 @@ func _physics_process(delta: float) -> void:
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 
 	# Vertical movement code. Apply gravity.
-	velocity.y += gravity * delta
+	var down_direction = up_direction * -1.0
+	velocity += (gravity * delta * down_direction)
 
 	# Move based on the velocity and snap to the ground.
 	# TODO: This information should be set to the CharacterBody properties instead of arguments: snap, Vector2.DOWN, Vector2.UP
 	# TODO: Rename velocity to linear_velocity in the rest of the script.
 	move_and_slide()
 	
-	if is_on_floor():
-	#	https://github.com/godotrecipes/character_vs_rigid/blob/master/player.gd#L4
-		for i in get_slide_collision_count():
-			var c = get_slide_collision(i)
-			if c.get_collider() is RigidBody2D:
-				c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE)
-
-	# Check for jumping. is_on_floor() must be called after movement code.
+	
 	if is_on_floor() and Input.is_action_just_pressed(input_prefix + &"jump"):
-		velocity.y = -JUMP_SPEED
-	
-	#if abs(velocity.x) < 0.1:
-		#animation.play("kai_idle_")
-	#else:
-		#animation.play("kai_sprint")
-		#
-	#if animation.flip_h == false and velocity.x < 0:
-		#animation.flip_h = true
-	#elif velocity.x > 0.1:
-		#animation.flip_h = false
-	
+		velocity = (JUMP_SPEED * up_direction)
 
+	if not is_on_floor():
+		if ceiling_raycast.is_colliding():
+			var collider = $RayCast2D.get_collider()
+			# TODO check type of collision of change collision masking
+			do_flip()
+		pass
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	if not enabled:
-		return
+	
 	player_out_of_bounds.emit()
 	pass # Replace with function body.

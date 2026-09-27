@@ -68,3 +68,31 @@ func recursive(limit, i=0):
 	if i < limit:
 		recursive(limit, i+1)
 ```
+
+
+# Assets
+Pull in the assets I have actually purchased from humblebundles.
+
+https://www.gamedevmarket.net/asset/unique-free-tileset-16x16
+
+https://www.humblebundle.com/downloads?key=VkMekd3d6Tzvae3a
+
+GameDev Market's RPG Adventure Essentials
+
+I know I had some simple animal assets at some point but I can't find those. No matter. Nothing I got was too expensive.
+
+I would like the audio assets. Sound design is probably the hardest piece for me?
+
+I'll just set up a basic forest background and tileset and start dropping animations in for testing.
+
+https://www.gamedevmarket.net/asset/pixel-platformer-pack-4319
+
+Kid Chameleon style pixel platformer.
+
+For ease of use, I'm focusing on assets that are small enough that they can be easily committed to the repo.
+
+
+## Unique Free Tileset [16x16]
+Foresting assets.
+
+https://www.gamedevmarket.net/asset/unique-free-tileset-16x16

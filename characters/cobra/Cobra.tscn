@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://co72b3usl2ndl"]
+
+[ext_resource type="Script" uid="uid://wkisruflqjwk" path="res://characters/cobra/cobra.gd" id="1_8kvbc"]
+[ext_resource type="Texture2D" uid="uid://d3jkqiwdk25je" path="res://assets/tiny_tiny_heroes_animals/animals.png" id="1_qu6br"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrbgr"]
+atlas = ExtResource("1_qu6br")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk3y0"]
+atlas = ExtResource("1_qu6br")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xeio"]
+atlas = ExtResource("1_qu6br")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4tb4"]
+atlas = ExtResource("1_qu6br")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c87bs"]
+atlas = ExtResource("1_qu6br")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dibfa"]
+atlas = ExtResource("1_qu6br")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnemb"]
+atlas = ExtResource("1_qu6br")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn1yf"]
+atlas = ExtResource("1_qu6br")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kvbc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrbgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk3y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xeio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4tb4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c87bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dibfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnemb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn1yf")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8kvbc"]
+radius = 7.5
+
+[node name="Cobra" type="CharacterBody2D" unique_id=497172948]
+script = ExtResource("1_8kvbc")
+
+[node name="Snake1" type="AnimatedSprite2D" parent="." unique_id=665118351]
+sprite_frames = SubResource("SpriteFrames_8kvbc")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1942223700]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_8kvbc")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2141707210]
+rotation = 3.1415927
+target_position = Vector2(2.0107238e-06, 23)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1608789337]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
