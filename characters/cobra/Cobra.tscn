@@ -72,8 +72,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_twhov"]
-size = Vector2(16, 15)
+[sub_resource type="CircleShape2D" id="CircleShape2D_8kvbc"]
+radius = 7.5
 
 [node name="Cobra" type="CharacterBody2D" unique_id=497172948]
 script = ExtResource("1_8kvbc")
@@ -84,7 +84,7 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1942223700]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_twhov")
+shape = SubResource("CircleShape2D_8kvbc")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2141707210]
 rotation = 3.1415927
