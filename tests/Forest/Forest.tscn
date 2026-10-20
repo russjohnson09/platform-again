@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d3jkqiwdk25je" path="res://assets/tiny_tiny_heroes_animals/animals.png" id="7_vrbgr"]
 [ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="9_3xeio"]
 [ext_resource type="Texture2D" uid="uid://ce62nj3vu7etw" path="res://assets/mobs_creatures/blue_crystal/sprite_00.png" id="10_4yhpi"]
+[ext_resource type="PackedScene" uid="uid://dm6vo6lc14fjh" path="res://characters/bear/bear.tscn" id="10_mmvo5"]
 [ext_resource type="Texture2D" uid="uid://cjqgn68rmbsoo" path="res://assets/mobs_creatures/blue_crystal/sprite_01.png" id="11_vxdhe"]
 [ext_resource type="Texture2D" uid="uid://c575jpptlnsnb" path="res://assets/mobs_creatures/blue_crystal/sprite_02.png" id="12_xiopa"]
 [ext_resource type="Texture2D" uid="uid://bphs4sv8p2o3f" path="res://assets/mobs_creatures/blue_crystal/sprite_03.png" id="13_m8rt6"]
@@ -542,12 +543,8 @@ sprite_frames = SubResource("SpriteFrames_dwu24")
 autoplay = "default"
 flip_h = true
 
-[node name="Bear2" type="AnimatedSprite2D" parent="." unique_id=2009201723]
+[node name="Bear2" parent="." unique_id=1330890506 instance=ExtResource("10_mmvo5")]
 position = Vector2(-984, 72)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_33nve")
-autoplay = "default"
-flip_h = true
 
 [node name="Animals2" type="Sprite2D" parent="." unique_id=1821221863]
 position = Vector2(-1616, -504)
@@ -576,5 +573,6 @@ autoplay = "default"
 centered = false
 flip_h = true
 
+[connection signal="action_area_entered" from="Cobra" to="." method="_on_cobra_action_area_entered"]
 [connection signal="player_out_of_bounds" from="Cobra" to="." method="_on_cobra_player_out_of_bounds"]
 [connection signal="player_out_of_bounds" from="Kai" to="." method="_on_kai_player_out_of_bounds"]

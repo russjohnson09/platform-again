@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 signal player_out_of_bounds
+#https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html#custom-signals
+#https://docs.godotengine.org/en/4.6/classes/class_area2d.html#class-area2d-signal-area-entered
+signal action_area_entered(area: Area2D)
 
 @export var JUMP_SPEED := 120 * 2
 @export var WALK_FORCE := 800
@@ -105,4 +108,17 @@ func _physics_process(delta: float) -> void:
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	
 	player_out_of_bounds.emit()
+	pass # Replace with function body.
+
+
+#func _on_action_area_body_entered(body: Node2D) -> void:
+	#
+	## This only applies to things that have some sort of collision. But that should
+	## include the bear area2d which is itself a node? not included read the docs
+	#print("_on_action_area_body_entered", body)
+	#pass # Replace with function body.
+
+
+func _on_action_area_area_entered(area: Area2D) -> void:
+	action_area_entered.emit(area)
 	pass # Replace with function body.

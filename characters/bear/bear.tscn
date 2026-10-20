@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://dm6vo6lc14fjh"]
+
+[ext_resource type="Texture2D" uid="uid://d3jkqiwdk25je" path="res://assets/tiny_tiny_heroes_animals/animals.png" id="1_fuuky"]
+[ext_resource type="Script" uid="uid://cge5r0jatbpnw" path="res://characters/bear/bear.gd" id="2_g5u15"]
+[ext_resource type="Script" uid="uid://ddiqdyj7lhsu5" path="res://characters/bear/area_2d.gd" id="3_h2fo5"]
+[ext_resource type="AudioStream" uid="uid://8fkwvfivblia" path="res://assets/russ_audio/roar_roar_im_a_bear.mp3" id="4_6j72y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq6kb"]
+atlas = ExtResource("1_fuuky")
+region = Rect2(0, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7wp8"]
+atlas = ExtResource("1_fuuky")
+region = Rect2(16, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ebt5"]
+atlas = ExtResource("1_fuuky")
+region = Rect2(32, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gels"]
+atlas = ExtResource("1_fuuky")
+region = Rect2(48, 288, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33nve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq6kb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7wp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ebt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gels")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eqlyp"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_pdiep"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["
+"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_5n381"]
+resource_name = "new_animation"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.81, 1.9, 3.66, 4.49, 5.41, 6.32, 6.91),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["[b]ROAR!!![/b]", "[color=red][b]ROAR!!![/b][/color]", "I'm a bear!!!", "[b]B[/b] E A R", "B [b]E[/b] A R", "B E [b]A[/b] R", "B E A [b]R[/b]", ""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.82, 1.9, 3.67, 4.48),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.1, 0.1), Vector2(0.15, 0.15), Vector2(0.15, 0.15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2dp7"]
+_data = {
+&"RESET": SubResource("Animation_pdiep"),
+&"new_animation": SubResource("Animation_5n381")
+}
+
+[node name="Bear" type="AnimatedSprite2D" unique_id=1330890506 groups=["bear"]]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_33nve")
+autoplay = "default"
+flip_h = true
+script = ExtResource("2_g5u15")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1978105728 groups=["bear"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_h2fo5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2102905844]
+shape = SubResource("CircleShape2D_eqlyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1482170941]
+libraries/ = SubResource("AnimationLibrary_w2dp7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1604692820]
+stream = ExtResource("4_6j72y")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1138899077]
+z_index = 200
+anchors_preset = -1
+anchor_right = 35.083332
+anchor_bottom = 6.8333354
+offset_left = -16.000002
+offset_top = -18.66667
+offset_right = 36.0
+offset_bottom = 5.3333206
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "
+"
+metadata/_edit_use_anchors_ = true

@@ -48,9 +48,6 @@ func show_hide_debug():
 	else:
 		DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
 
-func _on_debug_btn_pressed() -> void:
-	show_hide_debug()
-
 
 func _on_down_btn_pressed() -> void:
 	pass # Replace with function body.
@@ -76,3 +73,16 @@ func _on_action_1_released() -> void:
 #func _on_virtual_joystick_gui_input(event: InputEvent) -> void:
 	#print(event)
 	#pass # Replace with function body.
+
+
+func _on_restart_pressed() -> void:
+	Input.action_press("restart")
+func _on_restart_released() -> void:
+	Input.action_release("restart")
+	
+
+
+func _on_debug_pressed() -> void:
+	
+	show_hide_debug()
+	pass # Replace with function body.
