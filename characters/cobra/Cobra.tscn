@@ -75,6 +75,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8kvbc"]
 radius = 7.5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kvbc"]
+
 [node name="Cobra" type="CharacterBody2D" unique_id=497172948]
 script = ExtResource("1_8kvbc")
 
@@ -92,4 +94,13 @@ target_position = Vector2(2.0107238e-06, 23)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1608789337]
 
+[node name="ActionArea" type="Area2D" parent="." unique_id=1226277497]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea" unique_id=1570060398]
+shape = SubResource("RectangleShape2D_8kvbc")
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="ActionArea" to="." method="_on_action_area_area_entered"]
+[connection signal="body_entered" from="ActionArea" to="." method="_on_action_area_body_entered"]
