@@ -47,11 +47,11 @@ motion_mode = 1
 script = ExtResource("1_yhavk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339573331]
-position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_2tfqc")
+metadata/_edit_lock_ = true
 
 [node name="GoldFish" type="AnimatedSprite2D" parent="." unique_id=508540738]
-position = Vector2(-2.6226832e-07, -3)
+position = Vector2(-16, -18)
 sprite_frames = SubResource("SpriteFrames_soxmy")
 autoplay = "default"
-metadata/_edit_lock_ = true
+centered = false

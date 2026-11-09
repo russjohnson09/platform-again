@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
-[ext_resource type="Script" uid="uid://dwl3koja4hqs5" path="res://node_2d.gd" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://bo3q0kqilhjd0" path="res://assets/pixel_ui/Green Buttons Icons.png" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://dwl3koja4hqs5" path="res://node_2d.gd" id="1_pyidc"]
+[ext_resource type="Texture2D" uid="uid://bo3q0kqilhjd0" path="res://assets/pixel_ui/Green Buttons Icons.png" id="2_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://d2ovtq0s4g6sr" path="res://ui/controls/controls.tscn" id="3_vvh5c"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wtcfe"]
 size = Vector2(100, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
-atlas = ExtResource("2_0e48y")
+atlas = ExtResource("2_vvh5c")
 region = Rect2(2, 98, 28, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hol4"]
-atlas = ExtResource("2_0e48y")
+atlas = ExtResource("2_vvh5c")
 region = Rect2(66, 98, 28, 28)
 
 [node name="Node2D" type="Node2D" unique_id=660807159]
-script = ExtResource("1_0e48y")
+script = ExtResource("1_pyidc")
 
 [node name="Button" type="Button" parent="." unique_id=768511857]
 offset_left = 368.0
@@ -86,7 +87,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="." unique_id=390356224]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(48, 384)
+position = Vector2(592, 280)
 texture_normal = SubResource("PlaceholderTexture2D_wtcfe")
 
 [node name="Label" type="Label" parent="TouchScreenButton3" unique_id=722175074]
@@ -100,7 +101,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="." unique_id=1437658123]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(200, 384)
+position = Vector2(448, 280)
 texture_normal = SubResource("PlaceholderTexture2D_wtcfe")
 
 [node name="Label" type="Label" parent="TouchScreenButton4" unique_id=1500725726]
@@ -117,6 +118,22 @@ position = Vector2(344, 112)
 texture_normal = SubResource("AtlasTexture_epypp")
 texture_pressed = SubResource("AtlasTexture_0hol4")
 
+[node name="TouchScreenButton6" type="TouchScreenButton" parent="." unique_id=1655226314]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(328, 280)
+texture_normal = SubResource("PlaceholderTexture2D_wtcfe")
+
+[node name="Label" type="Label" parent="TouchScreenButton6" unique_id=2093540924]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 82.0
+offset_bottom = 57.0
+text = "SEA
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Controls" parent="." unique_id=1212252444 instance=ExtResource("3_vvh5c")]
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
@@ -127,3 +144,4 @@ texture_pressed = SubResource("AtlasTexture_0hol4")
 [connection signal="pressed" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
 [connection signal="pressed" from="TouchScreenButton3" to="." method="_on_touch_screen_button_3_pressed"]
 [connection signal="pressed" from="TouchScreenButton4" to="." method="_on_touch_screen_button_4_pressed"]
+[connection signal="pressed" from="TouchScreenButton6" to="." method="_on_touch_screen_button_6_pressed"]

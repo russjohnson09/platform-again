@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dcxugs01w8gk6"]
+
+[ext_resource type="Texture2D" uid="uid://ya0mw6eqeqp0" path="res://assets/swimming_fish/TinyCrab.png" id="1_jggo8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oil0e"]
+atlas = ExtResource("1_jggo8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w25gw"]
+atlas = ExtResource("1_jggo8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp0qf"]
+atlas = ExtResource("1_jggo8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7va1"]
+atlas = ExtResource("1_jggo8")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy46j"]
+atlas = ExtResource("1_jggo8")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm25w"]
+atlas = ExtResource("1_jggo8")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6kjn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oil0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w25gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp0qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7va1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy46j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm25w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Crab" type="AnimatedSprite2D" unique_id=2088234613]
+sprite_frames = SubResource("SpriteFrames_d6kjn")
+autoplay = "default"
