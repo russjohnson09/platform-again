@@ -48,6 +48,9 @@
 [ext_resource type="Texture2D" uid="uid://3m0i5gdk7vri" path="res://assets/pixel_slime/individual/slime19.png" id="45_u2vxo"]
 [ext_resource type="Texture2D" uid="uid://d38776yo7mm8g" path="res://assets/pixel_slime/individual/slime20.png" id="46_bj7qp"]
 [ext_resource type="Texture2D" uid="uid://d0q256lly3hc1" path="res://assets/pixel_slime/individual/slime21.png" id="47_bypl4"]
+[ext_resource type="Texture2D" uid="uid://btygvfh0d80u1" path="res://assets/swimming_fish/DeepseaFishAll.png" id="49_oil0e"]
+[ext_resource type="Texture2D" path="res://assets/swimming_fish/DeepseaFishAllOutline.png" id="50_w25gw"]
+[ext_resource type="Texture2D" uid="uid://ya0mw6eqeqp0" path="res://assets/swimming_fish/TinyCrab.png" id="51_tp0qf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrbgr"]
 atlas = ExtResource("7_vrbgr")
@@ -382,6 +385,92 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oil0e"]
+atlas = ExtResource("51_tp0qf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w25gw"]
+atlas = ExtResource("51_tp0qf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp0qf"]
+atlas = ExtResource("51_tp0qf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7va1"]
+atlas = ExtResource("51_tp0qf")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy46j"]
+atlas = ExtResource("51_tp0qf")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm25w"]
+atlas = ExtResource("51_tp0qf")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jib27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oil0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w25gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp0qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7va1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy46j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm25w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcs8d"]
+atlas = ExtResource("49_oil0e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5rxc"]
+atlas = ExtResource("49_oil0e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhr5a"]
+atlas = ExtResource("49_oil0e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfw5o"]
+atlas = ExtResource("49_oil0e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7va1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcs8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5rxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhr5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfw5o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Forest" type="Node2D" unique_id=844377012]
 script = ExtResource("1_i0mmu")
 
@@ -572,6 +661,33 @@ sprite_frames = SubResource("SpriteFrames_l2lhy")
 autoplay = "default"
 centered = false
 flip_h = true
+
+[node name="DeepseaFishAll" type="Sprite2D" parent="." unique_id=1299346531]
+position = Vector2(-1008, 216)
+texture = ExtResource("49_oil0e")
+
+[node name="DeepseaFishAllOutline" type="Sprite2D" parent="." unique_id=1102311737]
+position = Vector2(-1008, 216)
+texture = ExtResource("50_w25gw")
+
+[node name="TinyCrab" type="Sprite2D" parent="." unique_id=417226282]
+position = Vector2(-896, 216)
+texture = ExtResource("51_tp0qf")
+
+[node name="Crab" type="AnimatedSprite2D" parent="." unique_id=1521069909]
+position = Vector2(-1152, 208)
+sprite_frames = SubResource("SpriteFrames_jib27")
+autoplay = "default"
+
+[node name="GoldFish2" type="AnimatedSprite2D" parent="." unique_id=1919621171]
+position = Vector2(-1840, 208)
+sprite_frames = SubResource("SpriteFrames_j7va1")
+autoplay = "default"
+
+[node name="GoldFish" type="AnimatedSprite2D" parent="." unique_id=121522546]
+position = Vector2(-1120, 208)
+sprite_frames = SubResource("SpriteFrames_j7va1")
+autoplay = "default"
 
 [connection signal="action_area_entered" from="Cobra" to="." method="_on_cobra_action_area_entered"]
 [connection signal="player_out_of_bounds" from="Cobra" to="." method="_on_cobra_player_out_of_bounds"]

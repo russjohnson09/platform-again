@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://7y1kefdpo0g8"]
+
+[ext_resource type="Texture2D" uid="uid://btygvfh0d80u1" path="res://assets/swimming_fish/DeepseaFishAll.png" id="1_2tfqc"]
+[ext_resource type="Script" uid="uid://ds8xpoc3gscpn" path="res://characters/goldfish/gold_fish.gd" id="1_yhavk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tfqc"]
+size = Vector2(18, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcs8d"]
+atlas = ExtResource("1_2tfqc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5rxc"]
+atlas = ExtResource("1_2tfqc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhr5a"]
+atlas = ExtResource("1_2tfqc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfw5o"]
+atlas = ExtResource("1_2tfqc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_soxmy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcs8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5rxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhr5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfw5o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GoldFish" type="CharacterBody2D" unique_id=519505135]
+motion_mode = 1
+script = ExtResource("1_yhavk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339573331]
+position = Vector2(2, -0.5)
+shape = SubResource("RectangleShape2D_2tfqc")
+
+[node name="GoldFish" type="AnimatedSprite2D" parent="." unique_id=508540738]
+position = Vector2(-2.6226832e-07, -3)
+sprite_frames = SubResource("SpriteFrames_soxmy")
+autoplay = "default"
+metadata/_edit_lock_ = true
